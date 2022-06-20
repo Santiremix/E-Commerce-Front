@@ -62,10 +62,21 @@ export const UserProvider = ({ children }) => {
       localStorage.removeItem("token");
     }
   };
+  const register = async (user) => {
+    
+    const res = await axios.post(API_URL + "/users/", user);
+    
+    dispatch({
+      type: "REGISTER",
+      payload: res.data,
+    });
+  };
 
-  
- 
-
+  const clearMessage = async () => {
+    dispatch({
+        type: "CLEARMESSAGE"
+      });
+  }
 
   return (
     <UserContext.Provider
@@ -75,10 +86,15 @@ export const UserProvider = ({ children }) => {
         login,
         getUserInfo,
         logout,
+        register,
+        clearMessage
       }}
     >
       {children}
     </UserContext.Provider>
   );
+
+ 
+
 
 };

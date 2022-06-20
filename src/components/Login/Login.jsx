@@ -2,12 +2,13 @@ import "./Login.scss";
 import { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import { Form, Input, Button } from 'antd';
+import {useNavigate} from 'react-router-dom'
 
 function Login() {
 
     const { login } = useContext(UserContext);
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const onFinish = (values) => {    
       login(values)
@@ -18,15 +19,14 @@ function Login() {
     };
   
     useEffect(() => {
-        setTimeout(() => {
-          const foundToken = JSON.parse(localStorage.getItem("token"));
-          if (foundToken) {
-              console.log("hay token")
-        //   navigate("/profile")
-        }
-        },2000)
-   
-    }, [login])
+      setTimeout(() => {
+        const foundToken = JSON.parse(localStorage.getItem("token"));
+        if (foundToken) {
+        navigate("/profile")
+      }
+      },2000)
+ 
+  }, [login])
 
     return (
         <div className="container">

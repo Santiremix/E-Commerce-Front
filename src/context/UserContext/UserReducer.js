@@ -10,20 +10,32 @@ const users = (state, action) => {
         return {
           ...state,
           token: action.payload.token,
-        }
+      };
+
       case "GET_USER_INFO":
         return {
         ...state,
         user: action.payload,
       };
-      
+
       case "LOGOUT":
+      return {
+        ...state,
+        user: null,
+        token: null
+      };
+      case "REGISTER":
         return {
           ...state,
-          user: null,
-          token: null
+          message: action.payload.message,
         };
-  
+      case "CLEARMESSAGE":
+            return {
+              ...state,
+              message: ""
+            };
+
+
       default:
         return state;
     }
