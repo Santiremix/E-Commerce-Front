@@ -45,7 +45,10 @@ export const UserProvider = ({ children }) => {
     if (res.data) {
       localStorage.setItem("token", JSON.stringify(res.data.token));
     }
-  };
+  }
+  
+ 
+
 
   return (
     <UserContext.Provider
@@ -53,7 +56,7 @@ export const UserProvider = ({ children }) => {
         token: state.token,
         user: state.user,
         login,
-        getUserInfo
+        getUserInfo,
       }}
     >
       {children}
