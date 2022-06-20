@@ -17,6 +17,24 @@ export const UserProvider = ({ children }) => {
 
   // a partir de aqui las distintas funciones:
 
+  const getUserInfo = async () => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    const res = await axios.get(
+      API_URL + "/users/info",
+      {
+        headers: {
+          authorization: token,
+        },
+      }
+      );
+      dispatch({
+        type: "GET_USER_INFO",
+        payload: res.data,
+      })
+    return res;
+  };
+
+
   const login = async (user) => {
     const res = await axios.post(API_URL + "/users/login", user);
     console.log(res.data);
@@ -35,9 +53,11 @@ export const UserProvider = ({ children }) => {
         token: state.token,
         user: state.user,
         login,
+        getUserInfo
       }}
     >
       {children}
     </UserContext.Provider>
   );
+
 };
