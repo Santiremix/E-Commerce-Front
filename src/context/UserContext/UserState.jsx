@@ -11,14 +11,15 @@ const initialState = {
 const API_URL = "http://localhost:8080";
 
 export const UserContext = createContext(initialState);
-export const UserProvider = ({ children }) => {
 
+export const UserProvider = ({ children }) => {
   const [state, dispatch] = useReducer(UserReducer, initialState);
 
-  // a partir de aqui las distintas funciones: 
+  // a partir de aqui las distintas funciones:
 
   const login = async (user) => {
     const res = await axios.post(API_URL + "/users/login", user);
+    console.log(res.data);
     dispatch({
       type: "LOGIN",
       payload: res.data,
@@ -34,10 +35,9 @@ export const UserProvider = ({ children }) => {
         token: state.token,
         user: state.user,
         login,
-        }}
-        >
-
-    {children}    
+      }}
+    >
+      {children}
     </UserContext.Provider>
   );
 };
