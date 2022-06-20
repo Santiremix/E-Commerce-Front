@@ -8,7 +8,7 @@ const initialState = {
   token: token ? token : null,
   user: null,
 };
-const API_URL = "http://localhost:3000";
+const API_URL = "http://localhost:8080";
 
 export const UserContext = createContext(initialState);
 export const UserProvider = ({ children }) => {
@@ -33,7 +33,9 @@ export const UserProvider = ({ children }) => {
       value={{
         token: state.token,
         user: state.user,
-        login,}}>
+        login,
+        }}
+        >
 
     {children}    
     </UserContext.Provider>
