@@ -3,7 +3,7 @@ import { OrdersContext } from "../../context/OrdersContext/OrderState";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 
 const Cart = () => {
-  const { cart,clearCart } = useContext(ProductsContext);
+  const { cart,clearCart,removeCart } = useContext(ProductsContext);
   const { createOrder } = useContext(OrdersContext);
   
   useEffect(() => {
@@ -24,6 +24,8 @@ const Cart = () => {
       <div className="cart" key={i}>
         <span>{cartItem.title}</span>
         <span>{cartItem.price}</span>
+        <button onClick={() => removeCart(cartItem)}>Remove from Cart</button>
+
       </div>
     );
   });

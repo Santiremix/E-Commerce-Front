@@ -29,6 +29,13 @@ export const ProductsProvider = ({ children }) => {
         payload: product,
       });
     };
+
+    const removeCart = (product,id) => {
+      dispatch({
+        type: "REMOVE_CART",
+        payload: product.removeItem,
+      });
+    };
     const clearCart = () => {
       dispatch({
         type: "CLEAR_CART",
@@ -44,7 +51,8 @@ export const ProductsProvider = ({ children }) => {
         cart: state.cart,
         getProducts,
         addCart,
-        clearCart
+        clearCart,
+        removeCart
 
         }}
       >

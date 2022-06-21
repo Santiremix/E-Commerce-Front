@@ -10,6 +10,12 @@ const products = (state, action) => {
         ...state,
         cart: [action.payload, ...state.cart],
       };
+    case "REMOVE_CART":
+      return {
+        ...state,
+        cart: state.products.filter((item) => item.id !== action.payload.id),
+      };
+
     case "CLEAR_CART":
         return {
           ...state,

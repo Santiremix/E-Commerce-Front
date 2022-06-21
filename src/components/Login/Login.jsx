@@ -24,7 +24,7 @@ function Login() {
         if (foundToken) {
         navigate("/profile")
       }
-      },2000)
+      },500)
  
   }, [login])
 
