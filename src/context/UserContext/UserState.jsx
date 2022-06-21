@@ -46,7 +46,6 @@ export const UserProvider = ({ children }) => {
       localStorage.setItem("token", JSON.stringify(res.data.token));
     }
   }
-  
   const logout = async () => {
     const token = JSON.parse(localStorage.getItem("token"));
     const res = await axios.delete(API_URL + "/users/logout",  
