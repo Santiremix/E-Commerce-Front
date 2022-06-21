@@ -2,8 +2,11 @@ import { createContext, useReducer } from "react";
 import axios from "axios";
 import ProductsReducer from "./ProductsReducer";
 
+const cart = JSON.parse(localStorage.getItem("cart"));
+
 const initialState = {
   products: [],
+  cart: cart ? cart : [],
 };
 
 const API_URL = "http://localhost:8080";
@@ -18,15 +21,31 @@ export const ProductsProvider = ({ children }) => {
         type: "GET_PRODUCTS",
         payload: res.data,
       });
-
       return res;
     };
+    const addCart = (product) => {
+      dispatch({
+        type: "ADD_CART",
+        payload: product,
+      });
+    };
+    const clearCart = () => {
+      dispatch({
+        type: "CLEAR_CART",
+      });
+    };
+  
+  
       
     return (
       <ProductsContext.Provider
         value={{
           products: state.products,
-          getProducts
+        cart: state.cart,
+        getProducts,
+        addCart,
+        clearCart
+
         }}
       >
         {children}
