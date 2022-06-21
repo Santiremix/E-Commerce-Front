@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 
 const Cart = () => {
-  const { cart,clearCart } = useContext(ProductsContext);
+  const { cart,clearCart,removeCart } = useContext(ProductsContext);
   
   useEffect(() => {
       localStorage.setItem("cart", JSON.stringify(cart));
@@ -17,6 +17,8 @@ const Cart = () => {
       <div className="cart" key={i}>
         <span>{cartItem.title}</span>
         <span>{cartItem.price}</span>
+        <button onClick={() => removeCart(cartItem)}>Remove from Cart</button>
+
       </div>
     );
   });
