@@ -22,9 +22,6 @@ export const ProductsProvider = ({ children }) => {
         payload: res.data,
       });
       return res;
-<<<<<<< HEAD
-    }
-=======
     };
     const addCart = (product) => {
       dispatch({
@@ -40,29 +37,20 @@ export const ProductsProvider = ({ children }) => {
   
   
       
->>>>>>> 073b40996e84657cb827a151fd433df42e442c91
     return (
       <ProductsContext.Provider
         value={{
           products: state.products,
-<<<<<<< HEAD
-          getProducts
-=======
         cart: state.cart,
         getProducts,
         addCart,
         clearCart
 
->>>>>>> 073b40996e84657cb827a151fd433df42e442c91
         }}
       >
         {children}
       </ProductsContext.Provider>
     );
-<<<<<<< HEAD
-}
-=======
   };
   
->>>>>>> 073b40996e84657cb827a151fd433df42e442c91
   
