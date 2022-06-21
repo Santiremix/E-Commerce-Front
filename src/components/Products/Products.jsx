@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import "./Products.scss"
+
 const Products = () => {
   const { getProducts, products, addCart, cart } = useContext(ProductsContext);
 
@@ -16,9 +17,9 @@ useEffect(() => {
   const product = products.map((product) => {
     return (
         <div className="card" key={product.id}>
-          <img></img>
+          <img src={product.Image}/> 
           <span className="productTitle"> {product.title} </span>
-          <span className="precio">{product.price}</span>
+          <span className="precio">{product.price.toFixed(2)}€</span>
           <button onClick={() => addCart(product)}>Add Cart</button>
         </div>
     );

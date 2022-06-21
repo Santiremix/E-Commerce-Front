@@ -30,10 +30,10 @@ export const ProductsProvider = ({ children }) => {
       });
     };
 
-    const removeCart = (product,id) => {
+    const removeCart = (product) => {
       dispatch({
         type: "REMOVE_CART",
-        payload: product.removeItem,
+        payload: product,
       });
     };
     const clearCart = () => {

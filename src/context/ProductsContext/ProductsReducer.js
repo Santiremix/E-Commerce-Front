@@ -13,7 +13,7 @@ const products = (state, action) => {
     case "REMOVE_CART":
       return {
         ...state,
-        cart: state.products.filter((item) => item.id !== action.payload.id),
+        cart: state.cart.filter((item) => item.id !== action.payload.id),
       };
 
     case "CLEAR_CART":
