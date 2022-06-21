@@ -38,7 +38,6 @@ function Register() {
             onFinishFailed={onFinishFailed}
             autoComplete="off"
           >
-
               <Form.Item
               label="Name"
               name="name"

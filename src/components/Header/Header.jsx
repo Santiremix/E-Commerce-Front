@@ -28,9 +28,6 @@ const Header = () => {
           </li>
 
           <li>
-            <Link to="/profile">Profile</Link>
-          </li>
-          <li>
             <Link to="/products">Products</Link>
           </li>
 
@@ -43,10 +40,15 @@ const Header = () => {
           </li>
          
             {token ? (
+              <>
+              <li>
+              <Link to="/profile">Profile</Link>
+            </li>
                <li><span onClick={logoutUser}>
                 <Link to="/">Logout</Link>
               </span>
               </li>
+              </>
             ) : (
               <>
                 <li><span>
