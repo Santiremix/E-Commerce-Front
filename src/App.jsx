@@ -12,7 +12,6 @@ import Products from "./components/Products/Products";
 import Cart from "./components/Cart/Cart";
 import { OrdersProvider } from "./context/OrdersContext/OrderState";
 
-
 function App() {
   return (
     <>
