@@ -8,7 +8,6 @@ import Profile from './components/Profile/Profile'
 import { UserProvider } from "./context/UserContext/UserState";
 import Register from "./components/Register/Register";
 
-
 function App() {
   return (
     <>
