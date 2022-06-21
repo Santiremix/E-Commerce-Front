@@ -18,17 +18,20 @@ export const ProductsProvider = ({ children }) => {
         type: "GET_PRODUCTS",
         payload: res.data,
       });
-      return (
-        <ProductsContext.Provider
-          value={{
-            products: state.products,
-            getProducts
-          }}
-        >
-          {children}
-        </ProductsContext.Provider>
-      );
-    
-    }
-}
+
+      return res;
+    };
+      
+    return (
+      <ProductsContext.Provider
+        value={{
+          products: state.products,
+          getProducts
+        }}
+      >
+        {children}
+      </ProductsContext.Provider>
+    );
+  };
+  
   

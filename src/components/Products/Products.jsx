@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
-
+import "./Products.scss"
 const Products = () => {
   const { getProducts, products } = useContext(ProductsContext);
 
@@ -11,13 +11,15 @@ const Products = () => {
   const product = products.map((product) => {
     return (
       <div key={product.id}>
-        <span>{product.title} </span>
-        <span>{product.price.toFixed(2)}</span>
+
+        <span className="productTitle"> {product.title} </span>
+        <span>{product.price}</span>
       </div>
     );
   });
 
-  return <div>{product}</div>;
+  return <div>
+      {product}</div>;
 };
 
 export default Products;

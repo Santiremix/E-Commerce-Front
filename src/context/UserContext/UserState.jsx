@@ -3,7 +3,6 @@ import axios from "axios";
 import UserReducer from "./UserReducer";
 
 const token = JSON.parse(localStorage.getItem("token"));
-
 const initialState = {
   token: token ? token : null,
   user: null,
@@ -15,25 +14,19 @@ export const UserContext = createContext(initialState);
 export const UserProvider = ({ children }) => {
   const [state, dispatch] = useReducer(UserReducer, initialState);
 
-  // a partir de aqui las distintas funciones:
-
   const getUserInfo = async () => {
     const token = JSON.parse(localStorage.getItem("token"));
-    const res = await axios.get(
-      API_URL + "/users/info",
-      {
-        headers: {
-          authorization: token,
-        },
-      }
-      );
-      dispatch({
-        type: "GET_USER_INFO",
-        payload: res.data,
-      })
+    const res = await axios.get(API_URL + "/users/info", {
+      headers: {
+        authorization: token,
+      },
+    });
+    dispatch({
+      type: "GET_USER_INFO",
+      payload: res.data,
+    });
     return res;
   };
-
 
   const login = async (user) => {
     const res = await axios.post(API_URL + "/users/login", user);
@@ -45,11 +38,10 @@ export const UserProvider = ({ children }) => {
     if (res.data) {
       localStorage.setItem("token", JSON.stringify(res.data.token));
     }
-  }
+  };
   const logout = async () => {
     const token = JSON.parse(localStorage.getItem("token"));
-    const res = await axios.delete(API_URL + "/users/logout",  
-    {
+    const res = await axios.delete(API_URL + "/users/logout", {
       headers: {
         authorization: token,
       },
@@ -63,9 +55,7 @@ export const UserProvider = ({ children }) => {
     }
   };
   const register = async (user) => {
-    
     const res = await axios.post(API_URL + "/users/createUser", user);
-    
     dispatch({
       type: "REGISTER",
       payload: res.data,
@@ -74,9 +64,9 @@ export const UserProvider = ({ children }) => {
 
   const clearMessage = async () => {
     dispatch({
-        type: "CLEARMESSAGE"
-      });
-  }
+      type: "CLEARMESSAGE",
+    });
+  };
 
   return (
     <UserContext.Provider
@@ -87,14 +77,10 @@ export const UserProvider = ({ children }) => {
         getUserInfo,
         logout,
         register,
-        clearMessage
+        clearMessage,
       }}
     >
       {children}
     </UserContext.Provider>
   );
-
- 
-
-
 };
