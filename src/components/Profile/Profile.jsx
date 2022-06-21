@@ -1,13 +1,8 @@
 import { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
-<<<<<<< HEAD
-import './Profile.scss'
-
-=======
 import { Spin } from "antd";
 import { Form, Input, Button } from "antd";
 import "./Profile.scss";
->>>>>>> develop
 const Profile = () => {
   const { getUserInfo, user } = useContext(UserContext);
 
@@ -16,18 +11,6 @@ const Profile = () => {
   }, []);
 
   if (!user) {
-<<<<<<< HEAD
-    return <div className="container">
-        <span>
-        Cargando...
-        </span>
-      </div>
-  }
-
-  return <div className="container">
-      <p className="welcome">Bienvenido {user.name}!</p>
-    </div>;
-=======
     return (
       <div className="example">
         {" "}
@@ -58,7 +41,6 @@ const Profile = () => {
       </div>
     </>
   );
->>>>>>> develop
 };
 
 export default Profile;
