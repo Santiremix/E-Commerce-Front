@@ -10,6 +10,7 @@ import Register from "./components/Register/Register";
 import { ProductsProvider } from "./context/ProductsContext/ProductsState";
 import Products from "./components/Products/Products";
 import Cart from "./components/Cart/Cart";
+import { OrdersProvider } from "./context/OrdersContext/OrderState";
 
 
 function App() {
@@ -17,18 +18,20 @@ function App() {
     <>
       <UserProvider>
         <ProductsProvider>
-          <BrowserRouter>
-            <Header />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/cart" element={<Cart />} />
-            </Routes>
-            <Footer />
-          </BrowserRouter>
+          <OrdersProvider>
+            <BrowserRouter>
+              <Header />
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/profile" element={<Profile />} />
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/products" element={<Products />} />
+                  <Route path="/cart" element={<Cart />} />
+                </Routes>
+              <Footer />
+            </BrowserRouter>
+          </OrdersProvider>
         </ProductsProvider>
       </UserProvider>
     </>
