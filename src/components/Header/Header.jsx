@@ -39,6 +39,7 @@ const navigate = useNavigate();
                 </li>
                 <li><Link to="/register">Register</Link></li>
                 <li><Link to="/profile">Profile</Link></li>
+                <li><Link to="/products">Products</Link></li>
             {/*Se puede añadir un icono en lugar de texto */}
             </ul>
         </nav>
