@@ -12,7 +12,7 @@ const Products = () => {
     return (
       <div key={product.id}>
         <span>{product.title} </span>
-        <span>{product.price.toFixed(2)}</span>
+        <span>{product.price}</span>
       </div>
     );
   });
