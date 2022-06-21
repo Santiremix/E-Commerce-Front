@@ -15,17 +15,16 @@ useEffect(() => {
 
   const product = products.map((product) => {
     return (
-      <div key={product.id}>
-
-        <span className="productTitle"> {product.title} </span>
-        <span>{product.price}</span>
-        <button onClick={() => addCart(product)}>Add Cart</button>
-
-      </div>
+        <div className="card" key={product.id}>
+          <img></img>
+          <span className="productTitle"> {product.title} </span>
+          <span className="precio">{product.price}</span>
+          <button onClick={() => addCart(product)}>Add Cart</button>
+        </div>
     );
   });
 
-  return <div>
+  return <div className="cont">
       {product}
       </div>;
 };

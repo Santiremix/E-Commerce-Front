@@ -1,4 +1,40 @@
-.productTitle{
+.cont{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    // height: 80vh;
+    padding: 80px;
+    margin: 80px;
+    .card{
+        // border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 250px;
+        height: 400px;
+        padding: 0 20px 0 20px;
+        margin: 15px;
+        img{
+            border: 1px solid black;
+            height: 300px;
+            width: 100%;
+            margin: 18px 0 18px 0;
+        }
+        .precio{
+            padding: 7px;
+        }
+        .productTitle{
+            padding: 7px;
+            border: 2px solid red;
+            width: 100%;
+            text-align: center;
+        }
+        button{
+            margin-bottom: 12px;
+        }
+    }
 
-    border: 2px solid red;
 }

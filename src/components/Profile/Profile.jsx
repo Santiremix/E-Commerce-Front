@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
+import './Profile.scss'
 
 const Profile = () => {
   const { getUserInfo, user } = useContext(UserContext);
@@ -9,10 +10,16 @@ const Profile = () => {
   }, []);
 
   if (!user) {
-    return <span>Cargando...</span>;
+    return <div className="container">
+        <span>
+        Cargando...
+        </span>
+      </div>
   }
 
-  return <div>Tu usuario es:  {user.name}</div>;
+  return <div className="container">
+      <p className="welcome">Bienvenido {user.name}!</p>
+    </div>;
 };
 
 export default Profile;
