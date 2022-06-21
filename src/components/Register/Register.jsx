@@ -1,3 +1,4 @@
+import './Register.scss'
 import { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import { Form, Input, Button } from 'antd';
@@ -24,6 +25,10 @@ function Register() {
 
     return (
         <div className="container">
+          <div className='text'>
+            <p className='title'>Bienvenido!</p>
+            <p className='subtitle'>Por favor, introduce tus datos.</p>
+          </div>
           <Form
             name="basic"
             labelCol={{ span: 8 }}
@@ -50,12 +55,21 @@ function Register() {
             </Form.Item>
     
             <Form.Item
+              label="Phone"
+              name="phone"
+              rules={[{ required: true, message: "Please enter your phone!" }]}
+            >
+              <Input.Password />
+            </Form.Item>
+            
+            <Form.Item
               label="Password"
               name="password"
               rules={[{ required: true, message: "Please input your password!" }]}
             >
               <Input.Password />
             </Form.Item>
+
 
             {message}
     

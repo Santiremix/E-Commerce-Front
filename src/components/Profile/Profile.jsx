@@ -11,7 +11,7 @@ const Profile = () => {
   if (!user) {
     return <span>Cargando...</span>;
   }
-console.log(user)
+
   return <div>Tu usuario es:  {user.name}</div>;
 };
 

@@ -1,0 +1,31 @@
+.container{
+    margin: 0;
+    padding-top: 8rem;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(107, 190, 193, 0.71);
+    .text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        line-height: 20px;
+        .title{
+            font-size: 50px;
+        }
+        .subtitle{
+            font-size: 35px;
+        }
+    }
+    form{
+        padding-right: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 400px;
+        width: 450px;
+    }
+}
