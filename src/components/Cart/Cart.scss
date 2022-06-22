@@ -19,7 +19,7 @@
     opacity:0.7;
    
 }
-.cart {
+.cartProduct {
     border: 2px dotted black;
     display:flex;
     padding: 1em;
@@ -45,9 +45,15 @@
          justify-content: space-between;
          margin: 0 2em ;
          width: 50%;
-        text-align: center;
-      .cartTitle {
+        
+      .cartInfo {
+          display:flex;
+          flex-direction: column;
         color: red;
+        .name{
+            color:black;
+            font-weight:700;
+        }
       }
       .cartPrice{
           font-weight: 700;
