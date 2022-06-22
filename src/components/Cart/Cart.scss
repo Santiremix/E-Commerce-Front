@@ -1,0 +1,30 @@
+.cart-cont{
+    display: block;
+    justify-content: center;
+    align-content: center;
+    margin: px 10px 10px 18px;
+
+    .cart{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        margin-bottom: 15px;
+        button{
+            margin-bottom: 12px;
+            width: 5%;
+            background-color: cadetblue;
+            color: azure;
+            border: 0;
+            padding: 8px 13px 8px 13px;
+            transition: .5s;
+        }
+        button:hover{
+            background-color: azure;
+            color: cadetblue;
+            border: 1px solid cadetblue;
+        }
+    }
+    .order-btn{
+        margin: 12px 12px 0 0;
+    }
+}

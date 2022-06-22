@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { OrdersContext } from "../../context/OrdersContext/OrderState";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
+import './Cart.scss'
 
 const Cart = () => {
   const { cart,clearCart,removeCart } = useContext(ProductsContext);
@@ -23,17 +24,16 @@ const Cart = () => {
     return (
       <div className="cart" key={i}>
         <span>{cartItem.title}</span>
-        <span>{cartItem.price}</span>
-        <button onClick={() => removeCart(cartItem)}>Remove from Cart</button>
-
+        <span>{cartItem.price}€</span>
+        <button onClick={() => removeCart(cartItem)}>Delete</button>
       </div>
     );
   });
   return (
-    <div>
+    <div className="cart-cont">
       {cartItem}
-      <button onClick={() => clearCart()}>Clear cart</button>
-      <button onClick={() => createNewOrder()}>Create Order</button>
+      <button className="order-btn" onClick={() => clearCart()}>Clear cart</button>
+      <button className="order-btn" onClick={() => createNewOrder()}>Create Order</button>
     </div>
   );
 };
