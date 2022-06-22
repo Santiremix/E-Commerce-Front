@@ -1,34 +1,35 @@
-import './Register.scss'
+import "./Login.scss";
 import { useContext, useEffect } from "react";
-import { UserContext } from "../../context/UserContext/UserState";
+import { UserContext } from "../../../context/UserContext/UserState";
 import { Form, Input, Button } from 'antd';
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from 'react-router-dom'
 
+function Login() {
 
-function Register() {
-
-    const { clearMessage, register, message } = useContext(UserContext);
+    const { login } = useContext(UserContext);
 
     const navigate = useNavigate()
 
-    const onFinish = (values) => {  
-      register(values)
-      setTimeout(() => {
-          navigate("/")
-          clearMessage()
-      },3000)
+    const onFinish = (values) => {    
+      login(values)
     };
    
     const onFinishFailed = (errorInfo) => {
       console.log("Failed:", errorInfo);
     };
+  
+    useEffect(() => {
+      setTimeout(() => {
+        const foundToken = JSON.parse(localStorage.getItem("token"));
+        if (foundToken) {
+        navigate("/profile")
+      }
+      },500)
+ 
+  }, [login])
 
     return (
         <div className="container">
-          <div className='text'>
-            <p className='title'>Bienvenido!</p>
-            <p className='subtitle'>Por favor, introduce tus datos.</p>
-          </div>
           <Form
             name="basic"
             labelCol={{ span: 8 }}
@@ -38,13 +39,6 @@ function Register() {
             onFinishFailed={onFinishFailed}
             autoComplete="off"
           >
-              <Form.Item
-              label="Name"
-              name="name"
-              rules={[{ required: true, message: "Please input your name!" }]}
-            >
-              <Input />
-            </Form.Item>
             <Form.Item
               label="Email"
               name="email"
@@ -54,32 +48,22 @@ function Register() {
             </Form.Item>
     
             <Form.Item
-              label="Phone"
-              name="phone"
-              rules={[{ required: true, message: "Please enter your phone!" }]}
-            >
-              <Input.Password />
-            </Form.Item>
-            
-            <Form.Item
               label="Password"
               name="password"
               rules={[{ required: true, message: "Please input your password!" }]}
             >
               <Input.Password />
             </Form.Item>
-
-
-            {message}
     
             <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
               <Button type="primary" htmlType="submit">
-                    Submit
+                    Login
               </Button>
             </Form.Item>
           </Form>
         </div>
       );
+    
 }
 
-export default Register
+export default Login

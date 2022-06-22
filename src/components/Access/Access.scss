@@ -1,3 +1,17 @@
 .example{
     display:flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: 100px auto;
+
+    border: 2px solid red;
+
+    .login{
+
+        border: 2px solid yellow;
+    }
+
+    .register{
+        border: 2px solid blue;
+    }
 }
