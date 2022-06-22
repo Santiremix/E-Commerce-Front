@@ -23,6 +23,16 @@ export const ProductsProvider = ({ children }) => {
       });
       return res;
     };
+
+    const getProductByName = async (entrada) => {
+      const res = await axios.get(API_URL + `/products/search/name/${entrada}`);
+      dispatch({
+        type: "GET_PRODUCT_BY_NAME",
+        payload: res.data,
+      });
+      return res;
+    };
+
     const addCart = (product) => {
       dispatch({
         type: "ADD_CART",
@@ -36,24 +46,23 @@ export const ProductsProvider = ({ children }) => {
         payload: product,
       });
     };
+
     const clearCart = () => {
       dispatch({
         type: "CLEAR_CART",
       });
     };
   
-  
-      
     return (
       <ProductsContext.Provider
         value={{
-          products: state.products,
+        products: state.products,
         cart: state.cart,
         getProducts,
         addCart,
         clearCart,
-        removeCart
-
+        removeCart,
+        getProductByName
         }}
       >
         {children}

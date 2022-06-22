@@ -3,12 +3,16 @@ import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import "./Products.scss"
 
 const Products = () => {
-  const { getProducts, products, addCart, cart } = useContext(ProductsContext);
+  const { getProducts, products, addCart, cart, getProductByName } = useContext(ProductsContext);
   const [busqueda, setBusqueda] = useState('');
 
   const handleChange = e => {
     setBusqueda(e.target.value)
     console.log('Busequeda: ' + e.target.value)
+  }
+
+  const buscar = (busqueda) => {
+    getProductByName(busqueda)
   }
 
   useEffect(() => {
@@ -36,9 +40,9 @@ useEffect(() => {
   return(
   <div className="cont">
     <div className="search-div">
-        <input className="buscador" type='search' value={busqueda} placeholder='Buscar' onChange={handleChange}>
+        <input className="buscador" type='search' placeholder='Buscar' onChange={handleChange}>
         </input>
-        <button className="search-btn">Buscar</button>
+        <button className="search-btn" onClick={() => buscar(busqueda)}>Buscar</button>
       </div>
       <div className="order">
         {product}
