@@ -1,7 +1,8 @@
 import { useContext, useEffect } from "react";
 import { OrdersContext } from "../../context/OrdersContext/OrderState";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
-
+import "./Cart.scss"
+import { DeleteTwoTone } from "@ant-design/icons";
 const Cart = () => {
   const { cart,clearCart,removeCart } = useContext(ProductsContext);
   const { createOrder } = useContext(OrdersContext);
@@ -21,9 +22,15 @@ const Cart = () => {
   const cartItem = cart.map((cartItem, i) => {
     return (
       <div className="cart" key={i}>
-        <span>{cartItem.title}</span>
-        <span>{cartItem.price}</span>
-        <button onClick={() => removeCart(cartItem)}>Remove from Cart</button>
+        <div><img src={cartItem.image} className="cartImg"/></div>
+        <div className="cartDescription">
+              <div className="cartTitle">{cartItem.name}</div>
+              <div className="cartPrice">{cartItem.price}€</div>
+            </div>
+
+        
+    
+        <button className="cartRemove" onClick={() => removeCart(cartItem)}><DeleteTwoTone twoToneColor="#000000" /></button>
 
       </div>
     );

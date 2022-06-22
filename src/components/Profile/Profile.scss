@@ -8,14 +8,32 @@
     }
 .userInfo {
     margin: 0 auto;
+    padding:2em;
     border: 2px solid green;
     text-align: center;
     width: 50vw;
+    .userContact{
+        width:50%;
+        margin:2em auto;
+        text-align: left;
+    }
+
+    .userData{
+        margin:1em 0 ;
+        font-weight: 700;
+    }
+    .userMap{
+        font-style: oblique;
+        padding:1em;
+        border: 1px solid rgb(0, 187, 255);
+        border-radius:1px;
+    }
   }
   
   
   .updateInfo {
     margin: 0 auto;
+   
     border: 2px solid orange;
     text-align: center;
   }
@@ -23,13 +41,16 @@
   }
 
   .ordersInfo {
+    padding:2em;
     margin: 0 auto;
     border: 2px solid green;
     text-align: center;
     width: 50vw;
     .order {
         border: solid 2px purple;
-       
+       .orderTitle{
+           font-weight: 700;
+       }
       // fechas
         .dates {
           display: flex;

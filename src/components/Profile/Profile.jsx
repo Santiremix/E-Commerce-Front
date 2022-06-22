@@ -55,14 +55,16 @@ const Profile = () => {
           <span>link1</span> <span>link2</span>
         </div>
         <div className="userInfo">
-          <h2>¡Hola {user.name}! </h2>
-          <p>Aquí podrás ver tus datos:</p>
-          <p>Nombre</p>
-          <h3>{user.name}</h3>
-          <p>Email</p>
-          <p>{user.email}</p>
-          <p>Teléfono</p>
-          <p>{user.phone}</p>
+          <h2>Hello {user.name}!</h2>
+          <p>Here you can find your contact details:</p>
+          <div className="userContact">
+          <div className="userData">Name</div>
+          <p className="userMap">{user.name}</p>
+          <div className="userData">Email</div>
+          <p className="userMap">{user.email}</p>
+          <div className="userData">Mobile Phone</div>
+          <p className="userMap">{user.phone}</p>
+          </div>
         </div>
 
         <div className="ordersInfo">

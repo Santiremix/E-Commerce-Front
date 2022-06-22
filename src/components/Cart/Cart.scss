@@ -1,0 +1,39 @@
+
+.cart {
+    border: 2px dotted black;
+    display: flex;
+    padding: 1em;
+    margin: 1em;
+    align-items: center;
+    justify-content: center;
+    background-color: beige;
+  
+  //   div imagen
+    .cartImg {
+      width: 50%;
+      // pendiente de editar
+      width: auto;
+      height: 160px;
+    }
+    .cartDescription {
+      width: 50%;
+      text-align: center;
+      .cartTitle {
+        color: red;
+      }
+      .cartPrice{
+          font-weight: 700;
+      }
+    }
+    .cartRemove{
+        background-color: azure;
+        border-radius:2px;
+        border: 1px solid gray ;
+        opacity:0.7
+    }
+    .cartRemove:hover{
+        opacity:1;
+        border: 1px solid black ;
+    
+    }
+  }
