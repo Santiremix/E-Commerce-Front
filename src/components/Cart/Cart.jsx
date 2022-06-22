@@ -74,7 +74,7 @@ const Cart = () => {
       
        
 
-        <button onClick={() => createNewOrder()}>Create Order</button>
+        <button className="checkout"onClick={() => createNewOrder()}>Checkout</button>
     </div>
     </div>
   );

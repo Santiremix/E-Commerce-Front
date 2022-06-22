@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import { useNavigate } from "react-router-dom";
-import { ShoppingOutlined } from "@ant-design/icons";
+import { ShoppingOutlined,UserOutlined } from "@ant-design/icons";
 
 const Header = () => {
   const { token, logout } = useContext(UserContext);
 
   const navigate = useNavigate();
 
-  const logoutUser = () => {
-    logout();
-    setTimeout(() => {
-      navigate("/");
-    }, 1000);
-  };
+  // const logoutUser = () => {
+  //   logout();
+  //   setTimeout(() => {
+  //     navigate("/");
+  //   }, 1000);
+  // };
   //Hola
 
   return (
@@ -42,19 +42,22 @@ const Header = () => {
             {token ? (
               <>
               <li>
-              <Link to="/profile">Profile</Link>
+              <Link to="/profile"><UserOutlined /></Link>
             </li>
-               <li><span onClick={logoutUser}>
+               {/* <li><span onClick={logoutUser}>
                 <Link to="/">Logout</Link>
               </span>
-              </li>
+              </li> */}
               </>
             ) : (
               <>
-                <li><span>
+                {/* <li><span>
                   <Link to="/login">Login</Link>
                 </span></li>
-               <li> <Link to="/register">Register</Link></li>
+               <li> <Link to="/register">Register</Link></li> */}
+                <li><span>
+                  <Link to="/access"><UserOutlined /></Link>
+                </span></li>
               </>
             )}
           
