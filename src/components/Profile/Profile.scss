@@ -1,34 +1,86 @@
-.example{
-    
-    text-align:center;
-    margin:4em auto;
-}
 
-.example4{
-    border: 2px solid red;
-    color:orange;
-
-}
-.profile{
-    display:flex;
+.profile {
     width: 75%;
     margin: 0 auto;
-    border:3px solid blue;
-}
-.currentInfo{
+    border: 3px solid blue;
+    .navProfile {
+      text-align: right;
+    }
+.userInfo {
     margin: 0 auto;
-    border:2px solid green;
-    text-align:center;
-}
-
-.infoUser{
-    border:2px solid black;
-
-}
-.updateInfo{
+    border: 2px solid green;
+    text-align: center;
+    width: 50vw;
+  }
+  
+  
+  .updateInfo {
     margin: 0 auto;
-    border:2px solid orange;
-    text-align:center;
+    border: 2px solid orange;
+    text-align: center;
+  }
 
-}
+  }
+
+  .ordersInfo {
+    margin: 0 auto;
+    border: 2px solid green;
+    text-align: center;
+    width: 50vw;
+    .order {
+        border: solid 2px purple;
+       
+      // fechas
+        .dates {
+          display: flex;
+          justify-content: space-around;
+          border: solid 2px pink;
+          max-width:30vw;
+          margin:0 auto;
+          // campo original
+          .date {
+            font-style: oblique;
+          }
+          // fecha pedido
+          .orderDate {
+              font-weight: 700;
+            }
+          //   fecha entrega
+          .deliveryDate{
+              font-weight:200;
+          }
+        }
+      }
+      // producto
+      .article {
+        border: 2px dotted black;
+        display: flex;
+        padding: 1em;
+        margin: 1em;
+        align-items: center;
+        justify-content: center;
+        background-color: beige;
+      
+      //   div imagen
+        .articleImg {
+          width: 50%;
+          // pendiente de editar
+          width: auto;
+          height: 160px;
+        }
+        .articleDescription {
+          width: 50%;
+          text-align: center;
+          .articleTitle {
+            color: red;
+          }
+          .articlePrice{
+              font-weight: 700;
+          }
+        }
+      }
+      
+      
+  }
+// pedidos
 

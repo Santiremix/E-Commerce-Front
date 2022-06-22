@@ -13,7 +13,6 @@ const Cart = () => {
   if (cart.length <= 0) {
     return <span>No tienes ningún producto añadido</span>;
   }
-
   const createNewOrder = () => {
     createOrder(cart);
     clearCart();

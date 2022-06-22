@@ -13,12 +13,11 @@ useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-
   const product = products.map((product) => {
     return (
         <div className="card" key={product.id}>
-          <img src={product.Image}/> 
-          <span className="productTitle"> {product.title} </span>
+          <img src={product.image}/> 
+          <span className="productTitle"> {product.name} </span>
           <span className="precio">{product.price.toFixed(2)}€</span>
           <button onClick={() => addCart(product)}>Add Cart</button>
         </div>
