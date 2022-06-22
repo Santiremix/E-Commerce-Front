@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import { useNavigate } from "react-router-dom";
-import { ShoppingCartOutlined } from "@ant-design/icons";
+import { ShoppingOutlined } from "@ant-design/icons";
 
 const Header = () => {
   const { token, logout } = useContext(UserContext);
@@ -34,7 +34,7 @@ const Header = () => {
           <li>
             <span>
               <Link to="/cart">
-                <ShoppingCartOutlined />
+                <ShoppingOutlined />
               </Link>
             </span>
           </li>

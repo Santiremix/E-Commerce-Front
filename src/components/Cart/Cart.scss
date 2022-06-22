@@ -1,23 +1,52 @@
-
-.cart {
+.noCart{
     border: 2px dotted black;
-    display: flex;
+    text-align: center;   
     padding: 1em;
-    margin: 1em;
-    align-items: center;
+    margin: 1em auto;
     justify-content: center;
     background-color: beige;
-  
+    width:100%;
+    
+}
+.goProducts{
+    width:30vw;
+    height:3em;
+    background-color: white;
+    a{color:black;}
+}
+.goProducts:hover{
+    
+    background-color: black;
+    a{color:white;}
+   
+}
+.cart {
+    border: 2px dotted black;
+    display:flex;
+    padding: 1em;
+    margin: 1em auto;
+    // align-items: center;
+    justify-content: center;
+    background-color: beige;
+    width:100%;
+  .cartImage{
+      border:2px solid blue;
+  }
   //   div imagen
-    .cartImg {
+.cartImg {
+    border: 2px solid red;
       width: 50%;
       // pendiente de editar
       width: auto;
       height: 160px;
     }
     .cartDescription {
-      width: 50%;
-      text-align: center;
+         border: 2px solid purple;
+         display:flex;
+         justify-content: space-between;
+         margin: 0 2em ;
+         width: 50%;
+        text-align: center;
       .cartTitle {
         color: red;
       }
@@ -25,15 +54,39 @@
           font-weight: 700;
       }
     }
-    .cartRemove{
-        background-color: azure;
-        border-radius:2px;
-        border: 1px solid gray ;
-        opacity:0.7
-    }
-    .cartRemove:hover{
-        opacity:1;
-        border: 1px solid black ;
+    // .cartRemove{
+    //     background-color: azure;
+    //     border-radius:2px;
+    //     border: 1px solid gray ;
+    //     opacity:0.7
+    // }
+    // .cartRemove:hover{
+    //     opacity:1;
+    //     border: 1px solid black ;
     
+    // }
+
+    .cartRemove{
+        background-color: transparent;
+        border:none;
     }
+  }
+
+  .cartCheckout{
+      border:2px solid pink;
+      width:60vw;
+      margin:0 auto;
+      display:flex;
+
+      .cartList{
+          border:2px solid red;
+          width:50%;
+          padding: 1em;
+      }
+      .cartTotal{
+          border:2px solid blue;
+          width:50%;
+          padding: 1em;
+         
+      }
   }

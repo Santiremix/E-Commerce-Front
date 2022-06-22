@@ -2,15 +2,26 @@ import { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import { Spin } from "antd";
 import { Form, Input, Button } from "antd";
+import { Link, useNavigate } from "react-router-dom";
 import "./Profile.scss";
-function date(order) {
+
+function delivery(order) {
   const date = order.updatedAt.split("T")[0].split("-");
   date[2] = Number(date[2]) + 3;
   return date.join("-");
 }
 
+
 const Profile = () => {
-  const { getUserInfo, user } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const logoutUser = () => {
+    logout();
+    setTimeout(() => {
+      navigate("/");
+    }, 1000);
+  };
+  const { getUserInfo, user,logout } = useContext(UserContext);
 
   useEffect(() => {
     getUserInfo();
@@ -19,14 +30,14 @@ const Profile = () => {
   if (!user) {
     return (
       <div className="example">
-        {" "}
+
         <Spin />
       </div>
     );
   }
   console.log(user.Orders);
   const order = user.Orders.map((order, i) => {
-    const deliveryDate = date(order);
+    const deliveryDate = delivery(order);
 
     return (
       <div className="order" key={i}>
@@ -52,7 +63,9 @@ const Profile = () => {
     <>
       <div className="profile">
         <div className="navProfile">
-          <span>link1</span> <span>link2</span>
+        <span onClick={logoutUser}>
+                <Link to="/">Logout</Link>
+              </span> <span>link2</span>
         </div>
         <div className="userInfo">
           <h2>Hello {user.name}!</h2>
