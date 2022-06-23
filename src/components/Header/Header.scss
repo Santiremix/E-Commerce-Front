@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(159, 83, 58, 0.384);
+    background-color: rgba(95, 158, 160, 0.765);
     height: 20vh;
     p{
         font-size: 40px;
@@ -10,6 +10,8 @@
         justify-content: center;
         font-weight: 600;
         padding: 1rem 4rem 1rem 4rem;
+        text-decoration: none;
+        color: azure;
         cursor: pointer;
     }
     ul{
@@ -24,6 +26,9 @@
             margin: 0 1.4rem 0 1.4rem;
             text-decoration: none;
             cursor: pointer;
+            a{
+                color: azure;
+            }
         }
     }
 }
