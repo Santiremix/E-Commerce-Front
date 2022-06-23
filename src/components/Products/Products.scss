@@ -2,28 +2,36 @@
     display:flex;
     justify-content: space-around;
     align-content: center;
-    flex-direction: column;
+    flex-direction:column;
     flex-wrap: wrap;
     padding: 40px;
     margin: 20px;
     .search-div{
-        display: flex;
-        flex-direction: column;
+        // display: inline-block;
         padding-left: 15px;
         .buscador{
-            width: 23.5%;
+            width: 350px;
             margin-bottom: 15px;
-            padding: 4px;
+            padding: 15px;
         }
         .search-btn{
-            width: 6%;
+            width: 80px;
             padding: 3px;
+            margin-left: 25px;
+            margin-bottom: 12px;
+            background-color: cadetblue;
+            color: azure;
+            border: 0;
+            padding: 8px 13px 8px 13px;
+            transition: .5s;
+            cursor: pointer;
         }
     }
     .order{
         display: flex;
     .card{
-        border: 1px solid black;
+        border: 1px solid rgba(0, 0, 0, 0.092);
+        background-color: rgba(95, 158, 160, 0.039);
         display: flex;
         justify-content: center;
         align-content: center;
@@ -33,11 +41,13 @@
         height: 500px;
         padding: 60px;
         margin: 45px 10px 45px 15px;
+        transition: .5s;
         img{
             transition: 1s;
             height: 300px;
             width: 100%;
             margin: 18px 0 18px 0;
+            
         }
         .precio{
             padding: 7px;
@@ -54,6 +64,7 @@
             color: azure;
             border: 0;
             padding: 8px 13px 8px 13px;
+            cursor: pointer;
             transition: .5s;
         }
         button:hover{
@@ -62,6 +73,18 @@
             border: 1px solid cadetblue;
         }
     }
-    }   
+}   
 }
 
+.card:hover{
+    transform: scale(1.02);
+    // box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.174);
+    -webkit-box-shadow: -1px 1px 8px 5px rgba(139,139,139,0.48); 
+    box-shadow: -1px 1px 8px 5px rgba(139,139,139,0.48);
+    border: none;
+}
+
+
+.search-btn:hover{
+    transform: scale(1.009);
+}

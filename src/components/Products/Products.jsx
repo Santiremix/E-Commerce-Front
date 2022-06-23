@@ -31,7 +31,7 @@ useEffect(() => {
           <img src={product.image} alt=""/> 
           <span className="productTitle"> {product.name} </span>
           <span className="precio">{product.price.toFixed(2)}€</span>
-          <button onClick={() => addCart(product)}>Add Cart</button>
+          <button onClick={() => addCart(product)}>Add to Cart</button>
         </div>
       </>
     );
