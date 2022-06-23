@@ -1,9 +1,9 @@
 .cont{
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-content: center;
     flex-direction:column;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     padding: 40px;
     margin: 20px;
     .search-div{
@@ -29,6 +29,7 @@
     }
     .order{
         display: flex;
+        flex-wrap: wrap;
     .card{
         border: 1px solid rgba(0, 0, 0, 0.092);
         background-color: rgba(95, 158, 160, 0.039);
