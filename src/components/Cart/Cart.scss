@@ -11,13 +11,12 @@
 .goProducts{
     width:30vw;
     height:3em;
-    
     background-color: black;
-    a{color:white;}
+    color: azure;
+    cursor: pointer;
 }
 .goProducts:hover{
-    opacity:0.7;
-   
+    opacity:0.9;
 }
 .cartProduct {
     border: 2px dotted black;

@@ -25,9 +25,7 @@ const Cart = () => {
       <>
         <div className="noCart">
           <p>Your current shopping bag is empty...</p>
-          <button className="goProducts">
-            <Link to="/products">Check out our products</Link>
-          </button>
+            <Link to="/products"><button className="goProducts">Check out our products</button></Link>
         </div>
       </>
     );
