@@ -1,107 +1,22 @@
-
 .profile {
-    width: 75%;
-    margin: 0 auto;
-    border: 3px solid blue;
-    .navProfile {
-      text-align: right;
-    }
-.userInfo {
-    margin: 0 auto;
-    padding:2em;
-    border: 2px solid green;
+  width: 75%;
+  margin: 0 auto;
+  border: 3px solid pink;
+  .navProfile {
     text-align: center;
-    width: 50vw;
-    .userContact{
-        width:50%;
-        margin:2em auto;
-        text-align: left;
-    }
+    font-weight: 700;
+    border: 2px solid red;
+    font-family: monospace;
 
-    .userData{
-        margin:1em 0 ;
-        font-weight: 700;
-    }
-    .userMap{
-        font-style: oblique;
-        padding:1em;
-        border: 1px solid rgb(0, 187, 255);
-        border-radius:1px;
+    .profile__tab {
+      margin-right: 2em;
     }
   }
-  
-  
-  .updateInfo {
-    margin: 0 auto;
-   
-    border: 2px solid orange;
-    text-align: center;
-  }
+//   .updateInfo {
+//     margin: 0 auto;
+//     border: 2px solid orange;
+//     text-align: center;
+//   }
+}
 
-  }
-
-  .ordersInfo {
-    padding:2em;
-    margin: 0 auto;
-    border: 2px solid green;
-    text-align: center;
-    width: 50vw;
-    .order {
-        border: solid 2px purple;
-       .orderTitle{
-           font-weight: 700;
-       }
-      // fechas
-        .dates {
-          display: flex;
-          justify-content: space-around;
-          border: solid 2px pink;
-          max-width:30vw;
-          margin:0 auto;
-          // campo original
-          .date {
-            font-style: oblique;
-          }
-          // fecha pedido
-          .orderDate {
-              font-weight: 700;
-            }
-          //   fecha entrega
-          .deliveryDate{
-              font-weight:200;
-          }
-        }
-      }
-      // producto
-      .article {
-        border: 2px dotted black;
-        display: flex;
-        padding: 1em;
-        margin: 1em;
-        align-items: center;
-        justify-content: center;
-        background-color: beige;
-      
-      //   div imagen
-        .articleImg {
-          width: 50%;
-          // pendiente de editar
-          width: auto;
-          height: 160px;
-        }
-        .articleDescription {
-          width: 50%;
-          text-align: center;
-          .articleTitle {
-            color: red;
-          }
-          .articlePrice{
-              font-weight: 700;
-          }
-        }
-      }
-      
-      
-  }
 // pedidos
-

@@ -12,6 +12,8 @@ import Products from "./components/Products/Products";
 import Cart from "./components/Cart/Cart";
 import { OrdersProvider } from "./context/OrdersContext/OrderState";
 import Access from "./components/Access/Access";
+import MyOrders from "./components/Profile/MyOrders/MyOrders";
+import MyProfile from "./components/Profile/MyAccount/MyAccount";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
                   <Route path="/products" element={<Products />} />
                   <Route path="/cart" element={<Cart />} />
                   <Route path="/access" element={<Access />} />
+                  <Route path="/myorders" element={<MyOrders />} />
+                  <Route path="/myprofile" element={<MyProfile />} />
                 </Routes>
               <Footer />
             </BrowserRouter>
