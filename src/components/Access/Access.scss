@@ -1,17 +1,40 @@
 .example{
-    display:flex;
-    justify-content: space-around;
+    text-align: center;
     width: 70%;
     margin: 100px auto;
-
     border: 2px solid red;
-
-    .login{
-
-        border: 2px solid yellow;
-    }
-
-    .register{
-        border: 2px solid blue;
-    }
 }
+
+
+.container__Login{
+    padding: 1em;
+     border: 2px solid green;
+    text-align: center;
+    margin: 1em auto;
+    max-width: 300px;
+  
+}
+
+
+.userDetails {
+    margin: 2em auto;
+    text-align: left;
+  }
+  .userLabel {
+    margin: 1em 0;
+    font-weight: 700;
+    width: 100%;
+  }
+  .userData {
+    font-style: oblique;
+    padding: 1em;
+    border: 1px solid rgb(0, 187, 255);
+    border-radius: 1px;
+    width: 100%;
+  }
+  .updateBtn {
+    width: 100%;
+    margin: 1em 0;
+    padding: 1em;
+    font-weight: 700;
+  }
