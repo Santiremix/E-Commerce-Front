@@ -1,23 +1,19 @@
 .example{
     text-align: center;
     width: 70%;
-    margin: 100px auto;
+    margin: 40px auto;
     border: 2px solid red;
 }
 
-
 .container__Login{
-    padding: 1em;
-     border: 2px solid green;
+     padding: 1em;
+    border: 2px solid green;
     text-align: center;
     margin: 1em auto;
     max-width: 300px;
-  
 }
 
-
 .userDetails {
-    margin: 2em auto;
     text-align: left;
   }
   .userLabel {
@@ -37,4 +33,12 @@
     margin: 1em 0;
     padding: 1em;
     font-weight: 700;
+  }
+  .accessTitle{
+      color:purple;
+      font-size:32px;
+  }
+  .accessText{
+    color:lightcoral;
+    font-size:20px;
   }

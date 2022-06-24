@@ -15,7 +15,7 @@ function Access() {
       <div className="accessTitle"> {account ? "Login" : "Register"}</div>
       {account ? <Login /> : <Register />}
       <div
-        className="accessToggle"
+        className="accessText textStyle"
         onClick={() => setAccount((initial) => !initial)}
       >
         {" "}

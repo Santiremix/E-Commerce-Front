@@ -5,9 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
   const { login } = useContext(UserContext);
-
   const navigate = useNavigate();
-
   const initialState = {
     email: "",
     password: "",
@@ -15,21 +13,12 @@ function Login() {
   const [formData, setFormData] = useState(initialState);
   const { email, password } = formData;
 
-  // const onFinish = (values) => {
-  //   login(values)
-  // };
-
-  // const onFinishFailed = (errorInfo) => {
-  //   console.log("Failed:", errorInfo);
-  // };
-
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
   };
-
   const onSubmit = (e) => {
     e.preventDefault();
     login(formData);
@@ -60,7 +49,7 @@ function Login() {
         />
         <div className="userLabel">Password</div>
         <input
-          className="userData"
+          className="userData textStyle"
           type="password"
           name="password"
           required
@@ -68,8 +57,10 @@ function Login() {
           value={password}
           onChange={onChange}
         />
-        <input className="updateBtn" type="submit" value="Login" />
+        <input className="updateBtn textStyle" type="submit" value="Login" />
       </form>
+      <span className="accessText">Forgot your password?</span>
+
     </div>
   );
 }
