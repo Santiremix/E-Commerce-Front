@@ -14,11 +14,10 @@
             margin-bottom: 15px;
             padding: 15px;
         }
-        .search-btn{
+        .search-btn, .reset-btn{
             width: 80px;
             padding: 3px;
-            margin-left: 25px;
-            margin-bottom: 12px;
+            margin: 0 0 12px 25px;
             background-color: cadetblue;
             color: azure;
             border: 0;
@@ -59,6 +58,7 @@
             width: 100%;
             text-align: center;
         }
+    
         button{
             margin-bottom: 12px;
             background-color: cadetblue;
@@ -66,6 +66,7 @@
             border: 0;
             padding: 8px 13px 8px 13px;
             cursor: pointer;
+            // width: 100%;
             transition: .5s;
         }
         button:hover{
@@ -86,6 +87,10 @@
 }
 
 
-.search-btn:hover{
+.search-btn:hover, .reset-btn:hover{
     transform: scale(1.009);
+}
+
+.dropdown-item{
+    cursor: pointer;
 }
