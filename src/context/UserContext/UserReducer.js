@@ -34,11 +34,11 @@ const users = (state, action) => {
               ...state,
               message: ""
             };
-            
+
       case "UPDATE_USER":
             return {
               ...state,
-              token: action.payload.token,
+              user: action.payload,
             };
 
 

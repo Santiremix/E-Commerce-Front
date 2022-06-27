@@ -69,7 +69,11 @@ export const UserProvider = ({ children }) => {
   };
 
   const updateUser = async (param) => {
-    const res = await axios.get(API_URL + `/users/updateUser/${param}`
+    const res = await axios.post(API_URL + `/users/updateUser/`,param, {
+      headers: {
+        authorization: token,
+      },
+    }
     );
     dispatch({
       type: "UPDATE_USER",

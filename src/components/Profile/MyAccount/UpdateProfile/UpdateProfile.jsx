@@ -45,7 +45,7 @@ const UpdateProfile = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    updateUser(user.id)
+    updateUser(formData)
   };
 
   return (
