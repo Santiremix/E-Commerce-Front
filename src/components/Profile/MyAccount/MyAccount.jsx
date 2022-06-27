@@ -16,7 +16,7 @@ const MyProfile = () => {
   const initialValue = false;
   const [personalInfo, setPersonalInfo] = useState(initialValue);
   const { getUserInfo, user, logout } = useContext(UserContext);
-  console.log(user);
+
   useEffect(() => {
     getUserInfo();
   }, []);

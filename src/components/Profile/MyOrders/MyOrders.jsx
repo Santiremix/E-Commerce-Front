@@ -32,6 +32,7 @@ const MyOrders = () => {
       </div>
     );
   }
+  console.log(user)
 
   const order = user.Orders.map((order, i) => {
     const deliveryDate = delivery(order);
@@ -40,6 +41,7 @@ const MyOrders = () => {
       <div className="order" key={i}>
          
         <div className="orderTitle">Order #{order.id}</div>
+        {console.log(order)}
         <Divider/>
         <div className="dates">
           <div className="orderDate">
@@ -62,6 +64,7 @@ const MyOrders = () => {
             <div className="articleInfo">
             <span className="name">{article.name}</span>
             <span className="category">{article.Categories}</span>
+            {console.log(article)}
             </div>
               <div className="articlePrice">{article.price}€</div>
             </div>

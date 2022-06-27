@@ -13,7 +13,12 @@ const Profile = () => {
   const navigate = useNavigate();
   const initialValue = true;
   const [orders, setOrders] = useState(initialValue);
-
+//   const logoutUser = () => {
+//     logout();
+//     setTimeout(() => {
+//       navigate("/");
+//     }, 1000);
+//   };
   useEffect(() => {
     getUserInfo();
   }, []);
@@ -32,8 +37,8 @@ const Profile = () => {
     <>
       <div className="profile">
         <div className="navProfile">
-          <span className="profile__tab" onClick={()=>setOrders(true)}>Account</span>
-          <span className="profile__tab"onClick={()=>setOrders(false)}>Order History</span>
+          <span className="profile__tab" onClick={()=>setOrders(true)} style={orders?{opacity:1}:{opacity:.3}}>Account</span>
+          <span className="profile__tab"onClick={()=>setOrders(false)} style={orders?{opacity:.3}:{opacity:1}}>Order History</span>
         </div>
         {orders ? <MyProfile /> : <MyOrders />}
       </div>

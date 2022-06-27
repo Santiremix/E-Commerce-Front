@@ -40,7 +40,8 @@ const Cart = () => {
   const cartItem = cart.map((cartItem, i) => {
     //   pendiente funcion suma
     // const total = summary(cartItem);
-    console.log(cartItem.Categories[0].name);
+    // console.log(cartItem)
+    // console.log(cartItem.Categories[0].name);
 
     return (
       <div className="cartProduct" key={i}>
