@@ -49,7 +49,7 @@ const UpdateProfile = () => {
         <input
           className="userData"
           type="text"
-          name="fullname"
+          name="name"
           placeholder={user.name}
           value={name}
           onChange={onChange}

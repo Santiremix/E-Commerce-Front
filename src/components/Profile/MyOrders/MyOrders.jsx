@@ -32,45 +32,51 @@ const MyOrders = () => {
       </div>
     );
   }
-  console.log(user)
+  console.log(user);
 
-  const order = user.Orders.map((order, i) => {
+  const order = user.Orders.sort(function (a, b) {
+    if (a.createdAt < b.createdAt) {
+      return 1;
+    }
+    if (a.createdAt > b.createdAt) {
+      return -1;
+    }
+    return 0;
+  }).map((order, i) => {
     const deliveryDate = delivery(order);
 
     return (
       <div className="order" key={i}>
-         
         <div className="orderTitle">Order #{order.id}</div>
         {console.log(order)}
-        <Divider/>
+        <Divider />
         <div className="dates">
           <div className="orderDate">
             <span className="date">Order Date: </span>
             <br />
-            {order.updatedAt.split("T")[0]}
+            {order.createdAt.split("T")[0]}
           </div>
           <div className="deliveryDate">
             <span className="date">Delivery Date:</span>
             <br /> {deliveryDate}
           </div>
         </div>
-        <Divider/>
+        <Divider />
         {order.Products.map((article, i) => (
           <div className="article" key={i}>
             <div>
               <img src={article.image} className="articleImg" />
             </div>
             <div className="articleDescription">
-            <div className="articleInfo">
-            <span className="name">{article.name}</span>
-            <span className="category">{article.Categories}</span>
-            {console.log(article)}
-            </div>
+              <div className="articleInfo">
+                <span className="name">{article.name}</span>
+                <span className="category">{article.Categories}</span>
+                {console.log(article)}
+              </div>
               <div className="articlePrice">{article.price}€</div>
             </div>
           </div>
         ))}
-        
       </div>
     );
   });
@@ -78,7 +84,7 @@ const MyOrders = () => {
   return (
     <>
       <div className="ordersInfo">
-      <h3 className="textStyle">Order History</h3>
+        <h3 className="textStyle">Order History</h3>
         <p>You can find all your orders here.</p>
         {order}
       </div>
