@@ -1,9 +1,9 @@
 import "./Header.scss";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
-import { useNavigate } from "react-router-dom";
+
 import { ShoppingOutlined,UserOutlined } from "@ant-design/icons";
 import logo from "../../assets/images/logo.gif"
 
@@ -22,16 +22,16 @@ const Header = () => {
       <nav className="header">
       <Link to="/"><div>{<img src={logo} style={{height:70+'px'}}/>}</div></Link>
         <ul>
+          
           <li>
-            <Link to="/products" onClick={() => getProducts()}>Products</Link>
+            <span onClick={() => menProducts(5)}>men</span>
           </li>
           <li>
-            <span onClick={() => menProducts(5)}>Men</span>
+          <span onClick={() => menProducts(6)}>women</span>
           </li>
           <li>
-          <span onClick={() => menProducts(6)}>Women</span>
+            <Link to="/products" onClick={() => getProducts()}>all</Link>
           </li>
-
           <li>
             <span>
               <Link to="/cart">

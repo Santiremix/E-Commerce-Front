@@ -41,6 +41,10 @@ const Products = () => {
 
   useEffect(() => {
     getProducts();
+    window.scrollTo({
+        top: 0,
+        // behavior: 'smooth',
+    });
   }, []);
 
 useEffect(() => {
