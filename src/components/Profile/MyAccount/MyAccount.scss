@@ -1,34 +1,42 @@
 .userAccount {
   display: flex;
   .userMenu {
-    border: 2px solid purple;
     margin: 2em;
     position: absolute;
+    li {
+      display: flex;
+      justify-content: space-between;
+      width: 160px;
+      p {
+        margin: 0;
+      }
+    }
   }
   .userInfo {
     padding: 1em;
     // border: 2px solid green;
     text-align: center;
     margin: 1em auto;
-    max-width: 300px;
+    max-width: 450px;
     .userMessage {
       margin: 0 auto;
     }
     .userDetails {
-      margin: 2em auto;
       text-align: left;
     }
     .userLabel {
       margin: 1em 0;
       font-weight: 700;
       width: 100%;
+      text-transform: uppercase;
     }
     .userData {
-      font-style: oblique;
       padding: 1em;
-      border: 1px solid rgb(0, 187, 255);
+      border: 1px solid rgb(3, 18, 24);
       border-radius: 1px;
       width: 100%;
+      border-radius: 2px;
+      border: 1px solid black;
     }
     .updateBtn {
       width: 100%;

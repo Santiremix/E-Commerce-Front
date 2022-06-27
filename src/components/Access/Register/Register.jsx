@@ -1,4 +1,3 @@
-import './Register.scss'
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../../context/UserContext/UserState";
 import { Form, Input, Button } from 'antd';
@@ -39,7 +38,7 @@ function Register() {
     return (
       <div className="container__Login">
       <form className="userDetails" onSubmit={onSubmit}>
-      <div className="userLabel">Full Name *</div>
+      <div className="userLabel">Full Name <span className=" textStyle">*</span></div>
         <input
           className="userData"
           type="text"
@@ -50,7 +49,7 @@ function Register() {
           value={name}
           onChange={onChange}
         />
-        <div className="userLabel">Email *</div>
+        <div className="userLabel">Email <span className=" textStyle">*</span></div>
         <input
           className="userData"
           type="email"
@@ -61,7 +60,7 @@ function Register() {
           value={email}
           onChange={onChange}
         />
-        <div className="userLabel">Password *</div>
+        <div className="userLabel">Password <span className=" textStyle">*</span></div>
         <input
           className="userData"
           type="password"
@@ -71,7 +70,7 @@ function Register() {
           value={password}
           onChange={onChange}
         />
-        <div className="userLabel">Confirm your Password *</div>
+        <div className="userLabel">Confirm your Password <span className=" textStyle">*</span></div>
         <input
           className="userData"
           type="password"
@@ -81,7 +80,7 @@ function Register() {
           value={password2}
           onChange={onChange}
         />
-        <div className="userLabel">Phone *</div>
+        <div className="userLabel">Phone <span className=" textStyle">*</span></div>
         <input
           className="userData"
           type="text"
@@ -91,7 +90,7 @@ function Register() {
           value={phone}
           onChange={onChange}
         />
-        <input className="updateBtn" type="submit" value="Register" />
+        <input className="updateBtn buttonStyle" type="submit" value="Register" />
       </form>
     </div>
       );

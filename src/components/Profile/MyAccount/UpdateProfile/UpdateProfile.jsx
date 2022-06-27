@@ -39,7 +39,7 @@ const UpdateProfile = () => {
 
   return (
    
-    <> <h2>Personal information</h2>
+    <> <h3 className="textStyle">Personal information</h3>
     <p className="userMessage">
       Hello {user.name}, the email address is used when you sign in to your account.
     </p>
@@ -81,7 +81,7 @@ const UpdateProfile = () => {
           value={phone}
           onChange={onChange}
         />
-        <input className="updateBtn" type="submit" value ="Save Changes"/>
+        <input className="updateBtn buttonStyle" type="submit" value ="Save Changes"/>
       
     </form>
     </>

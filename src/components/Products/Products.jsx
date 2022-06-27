@@ -45,6 +45,7 @@ useEffect(() => {
       </div>
       <div className="order">
         {product}
+    
       </div>
   </div>
   )

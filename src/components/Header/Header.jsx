@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import { useNavigate } from "react-router-dom";
 import { ShoppingOutlined,UserOutlined } from "@ant-design/icons";
-
+import logo from "../../assets/images/logo.gif"
 const Header = () => {
   const { token, logout } = useContext(UserContext);
 
@@ -21,14 +21,16 @@ const Header = () => {
   return (
     <>
       <nav className="header">
-        <p>Nombre</p>
+      <Link to="/"><div>{<img src={logo} style={{height:70+'px'}}/>}</div></Link>
         <ul>
           <li>
-            <Link to="/">Home</Link>
-          </li>
-
-          <li>
             <Link to="/products">Products</Link>
+          </li>
+          <li>
+            <Link to="/men">men</Link>
+          </li>
+          <li>
+            <Link to="/women">women</Link>
           </li>
 
           <li>

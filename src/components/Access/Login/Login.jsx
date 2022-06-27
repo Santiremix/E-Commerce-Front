@@ -49,7 +49,7 @@ function Login() {
         />
         <div className="userLabel">Password</div>
         <input
-          className="userData textStyle"
+          className="userData"
           type="password"
           name="password"
           required
@@ -57,7 +57,7 @@ function Login() {
           value={password}
           onChange={onChange}
         />
-        <input className="updateBtn textStyle" type="submit" value="Login" />
+        <input className="updateBtn buttonStyle" type="submit" value="Login" />
       </form>
       <span className="accessText">Forgot your password?</span>
 

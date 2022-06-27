@@ -38,7 +38,7 @@ const UpdateAddress = () => {
   };
 
   return (
-    <> <h2>Shipping address</h2>
+    <> <h3 className="textStyle">Shipping address</h3>
     <p className="userMessage">
     Hey there! If you want to update your delivery address, you can do it here.
     </p>
@@ -62,7 +62,7 @@ const UpdateAddress = () => {
           value={name}
           onChange={onChange}
         />
-        <input className="updateBtn" type="submit" value ="Save Changes"/>
+        <input className="updateBtn buttonStyle" type="submit" value ="Save Changes"/>
       
     </form>
     </>

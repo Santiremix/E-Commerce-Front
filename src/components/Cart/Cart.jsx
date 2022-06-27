@@ -24,8 +24,8 @@ const Cart = () => {
     return (
       <>
         <div className="noCart">
-          <p>Your current shopping bag is empty...</p>
-          <button className="goProducts">
+          <p>Your current span shopping bag is empty...</p>
+          <button className="goProducts buttonStyle">
             <Link to="/products">Check out our products</Link>
           </button>
         </div>
@@ -59,25 +59,22 @@ const Cart = () => {
             <span className="name">{cartItem.name}</span>
             <span className="category">{cartItem.Categories[0].name}</span>
           </div>
-
           <div className="cartPrice">{cartItem.price}€</div>
         </div>
-
-        {/* <button className="cartRemove" onClick={() => removeCart(cartItem)}><DeleteTwoTone twoToneColor="#000000" /></button> */}
       </div>
     );
   });
   return (
     <div className="cartCheckout">
       <div className="cartList">
-        <h2>Shopping Bag ({cart.length})</h2>
+        <h2 className="textStyle">Shopping Bag ({cart.length})</h2>
         {cartItem}
-        <button onClick={() => clearCart()}>Clear cart</button>
+
       </div>
       <div className="cartTotal">
-        <h2>Summary</h2>
+        <h2 className="textStyle">Summary</h2>
 
-        <button className="checkout" onClick={() => createNewOrder()}>
+        <button className="checkout buttonStyle" onClick={() => createNewOrder()}>
           Checkout
         </button>
       </div>

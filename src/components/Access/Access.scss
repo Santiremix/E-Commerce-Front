@@ -20,25 +20,33 @@
     margin: 1em 0;
     font-weight: 700;
     width: 100%;
+    text-transform: uppercase;
   }
   .userData {
-    font-style: oblique;
     padding: 1em;
-    border: 1px solid rgb(0, 187, 255);
+    border: 1px solid rgb(3, 18, 24);
     border-radius: 1px;
     width: 100%;
+    border-radius: 2px;
+    border: 1px solid black;
   }
   .updateBtn {
     width: 100%;
     margin: 1em 0;
     padding: 1em;
     font-weight: 700;
+    text-transform: uppercase;
+ 
   }
   .accessTitle{
-      color:purple;
+    color:black;
       font-size:32px;
   }
   .accessText{
-    color:lightcoral;
-    font-size:20px;
+    color:black;
+    font-size:14px;
+    border-bottom: 1px solid black;
+    text-transform: uppercase;
+    font-family: 'Archivo', sans-serif;
+    word-spacing: 4px;
   }

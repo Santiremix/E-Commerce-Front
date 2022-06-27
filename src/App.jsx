@@ -14,6 +14,7 @@ import { OrdersProvider } from "./context/OrdersContext/OrderState";
 import Access from "./components/Access/Access";
 import MyOrders from "./components/Profile/MyOrders/MyOrders";
 import MyProfile from "./components/Profile/MyAccount/MyAccount";
+import ProductsForMen from "./components/Products/men/men";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
                   <Route path="/access" element={<Access />} />
                   <Route path="/myorders" element={<MyOrders />} />
                   <Route path="/myprofile" element={<MyProfile />} />
+                  <Route path="/men" element={<ProductsForMen />} />
                 </Routes>
               <Footer />
             </BrowserRouter>

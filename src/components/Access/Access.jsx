@@ -12,13 +12,12 @@ function Access() {
 
   return (
     <div className="example">
-      <div className="accessTitle"> {account ? "Login" : "Register"}</div>
+      <div className="accessTitle textStyle"> {account ? "Login" : "Register"}</div>
       {account ? <Login /> : <Register />}
       <div
-        className="accessText textStyle"
+        className="accessText"
         onClick={() => setAccount((initial) => !initial)}
       >
-        {" "}
         {account ? "Create Account" : "Login"}
       </div>
     </div>

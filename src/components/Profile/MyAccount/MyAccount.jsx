@@ -1,7 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { UserContext } from "../../../context/UserContext/UserState";
-
+import { Divider } from "antd";
+import {
+  SmileOutlined,
+  HomeOutlined,
+  ArrowRightOutlined,
+} from "@ant-design/icons";
 import UpdateAddress from "./UpdateAddress/UpdateAddress";
 import UpdateProfile from "./UpdateProfile/UpdateProfile";
 
@@ -21,19 +26,32 @@ const MyProfile = () => {
       navigate("/");
     }, 1000);
   };
-  
+
   return (
     <div className="userAccount">
-      <div className="userMenu">
-        <p  onClick={()=>setPersonalInfo(false)}>Personal Information</p>
-        <p  onClick={()=>setPersonalInfo(true)}>Shipping Details</p>
-        <p>--------</p>
+      
+      <ul className="userMenu">
+      <h3 className="textStyle">Account</h3>
+      <Divider />
+        <li>
+          <p onClick={() => setPersonalInfo(false)}>Personal Information </p>
+          <span>
+            <ArrowRightOutlined />
+          </span>
+        </li>
+        <Divider />
+        <li>
+          <p onClick={() => setPersonalInfo(true)}>Shipping Details </p>
+          <span>
+            <ArrowRightOutlined />
+          </span>
+        </li>
+        <Divider />
         <span onClick={logoutUser}>
-          <Link to="/">Logout</Link>
+          <Link to="/">Log Out</Link>
         </span>
-      </div>
+      </ul>
       <div className="userInfo">
-        
         {/* <div className="userDetails">
     <div className="userLabel">Full Name</div>
     <p className="userData">{user.name}</p>
@@ -42,7 +60,7 @@ const MyProfile = () => {
     <div className="userLabel">Phone</div>
     <p className="userData">{user.phone}</p>
     </div> */}
-        {personalInfo ?<UpdateAddress />   : <UpdateProfile />} 
+        {personalInfo ? <UpdateAddress /> : <UpdateProfile />}
       </div>
     </div>
   );

@@ -1,22 +1,16 @@
 .profile {
   width: 75%;
   margin: 0 auto;
-  border: 3px solid pink;
   .navProfile {
     text-align: center;
-    font-weight: 700;
-    border: 2px solid red;
-    font-family: monospace;
-
+    font-weight: 400;
+    font-size:16px;
+  
     .profile__tab {
       margin-right: 2em;
+      border-bottom: 1px solid black;
+      padding-bottom:2px;
+      opacity:0.7;
     }
   }
-//   .updateInfo {
-//     margin: 0 auto;
-//     border: 2px solid orange;
-//     text-align: center;
-//   }
 }
-
-// pedidos
