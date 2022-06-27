@@ -49,17 +49,24 @@
         }
         .articleDescription {
             display: flex;
-            flex-direction: column;
-            .name {
-              color: black;
+            justify-content: space-between;
+            margin: 0 2em;
+            width: 50%;
+    
+            .articleInfo {
+              display: flex;
+              flex-direction: column;
+              .name {
+                color: black;
+                font-weight: 700;
+              }
+              .category {
+                color: black;
+              }
+            }
+            .cartPrice {
               font-weight: 700;
             }
-            .category {
-              color: black;
-            }
-          }
-          .cartPrice {
-            font-weight: 700;
           }
         
       }
