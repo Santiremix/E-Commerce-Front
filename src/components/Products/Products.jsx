@@ -2,11 +2,15 @@ import e from "cors";
 import { useContext, useEffect, useState } from "react";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import "./Products.scss"
-
+import { notification } from "antd";
+import { ShoppingOutlined } from '@ant-design/icons';
 const Products = () => {
   const { getProducts, products, addCart, cart, getProductByName, getProductByCategory, orderProductAsc, orderProductDes } = useContext(ProductsContext);
   const [busqueda, setBusqueda] = useState('');
-
+ const addCartAndShowMessage = (product) => {
+     addCart(product)
+     openNotification('success')
+ }
   const handleChange = e => {
     setBusqueda(e.target.value)
     console.log('Busequeda: ' + e.target.value)
@@ -40,7 +44,24 @@ const Products = () => {
 
 useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
+   }
+  
+  , [cart]);
+
+  const openNotification = (type) => {
+    notification[type]({
+      message: 'Item added to your shopping bag',
+      description:
+        'This is the content of the notification.',
+      icon: (
+        <ShoppingOutlined
+          style={{
+            color: '#000',
+          }}
+        />
+      ),
+    });
+  };
 
   const product = products.map((product) => {
     return (
@@ -49,7 +70,7 @@ useEffect(() => {
           <img src={product.image} alt=""/> 
           <span className="productTitle"> {product.name} </span>
           <span className="precio">{product.price.toFixed(2)}€</span>
-          <button onClick={() => addCart(product)}>Add to Cart</button>
+          <button onClick={() => addCartAndShowMessage(product)}>Add to Cart</button>
         </div>
       </>
     );

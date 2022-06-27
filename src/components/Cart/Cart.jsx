@@ -1,9 +1,9 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { OrdersContext } from "../../context/OrdersContext/OrderState";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./Cart.scss";
-import { DeleteTwoTone } from "@ant-design/icons";
+import { UserContext } from "../../context/UserContext/UserState";
 
 // function summary(order) {
 //     let total = order.price
@@ -14,7 +14,12 @@ import { DeleteTwoTone } from "@ant-design/icons";
 
 const Cart = () => {
   const { cart, clearCart, removeCart } = useContext(ProductsContext);
+  const { user} = useContext(UserContext);
   const { createOrder } = useContext(OrdersContext);
+  const navigate = useNavigate();
+
+  const initialValue = false;
+    const [orders, setOrders] = useState(initialValue);
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -33,8 +38,15 @@ const Cart = () => {
     );
   }
   const createNewOrder = () => {
+    if (!user) {
+        return (
+            navigate("/access")
+        );
+      }
     createOrder(cart);
     clearCart();
+    navigate("/products")
+
   };
 
   const cartItem = cart.map((cartItem, i) => {

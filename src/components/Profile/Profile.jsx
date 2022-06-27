@@ -13,12 +13,6 @@ const Profile = () => {
   const navigate = useNavigate();
   const initialValue = true;
   const [orders, setOrders] = useState(initialValue);
-//   const logoutUser = () => {
-//     logout();
-//     setTimeout(() => {
-//       navigate("/");
-//     }, 1000);
-//   };
   useEffect(() => {
     getUserInfo();
   }, []);
