@@ -59,6 +59,7 @@
           .name {
             color: black;
             font-weight: 700;
+            font-family: 'Syne';
           }
           .category {
             color: black;
@@ -73,6 +74,19 @@
   .cartTotal {
     width: 50%;
     padding: 1em;
+    .cartDetails{
+        display:flex;
+        justify-content: space-between;
+        .subtotal{
+        font-weight:700;
+            
+        }
+        .delivery{
+        font-weight:300;
+
+        }
+    }
+    
 
   .checkout {
     width: 100%;
@@ -85,5 +99,10 @@
   .checkout:hover {
     opacity: 0.7;
   }
+  .taxes{
+      text-align:center;
+  }
   }
 }
+
+

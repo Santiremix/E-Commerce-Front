@@ -12,7 +12,7 @@ function Access() {
 
   return (
     <div className="example">
-      <div className="accessTitle textStyle"> {account ? "Login" : "Register"}</div>
+      <div className="btextStyle"> {account ? "Login" : "Register"}</div>
       {account ? <Login /> : <Register />}
       <div
         className="accessText"

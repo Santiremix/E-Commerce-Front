@@ -2,11 +2,12 @@
   display: flex;
   .userMenu {
     margin: 2em;
+    width:300px;
     position: absolute;
     li {
       display: flex;
       justify-content: space-between;
-      width: 160px;
+      width: 240px;
       p {
         margin: 0;
       }

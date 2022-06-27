@@ -15,25 +15,24 @@ import { notification } from "antd";
 
 const Cart = () => {
   const { cart, clearCart, removeCart } = useContext(ProductsContext);
-  const { user} = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const { createOrder } = useContext(OrdersContext);
   const navigate = useNavigate();
 
   const initialValue = false;
-    const [orders, setOrders] = useState(initialValue);
+  const [orders, setOrders] = useState(initialValue);
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  const openNotificationWithIcon = (type) => {
+  const openNotificationWithIcon = (type, placement) => {
     notification[type]({
-      message: 'Pedido añadido!',
+      message: "Order created!",
       description:
-        'Tu pedido ha sido añadido con éxito. Visita tu historial de pedidos para consultar datos sobre el envío y fechas de entrega.',
+        "Your order has been placed! Check your order history for more details such us delivery date.",
+      placement,
     });
-
-
   };
 
   if (cart.length <= 0) {
@@ -50,27 +49,19 @@ const Cart = () => {
   }
   const createNewOrder = () => {
     if (!user) {
-        navigate("/access");
+      navigate("/access");
     }
-      openNotificationWithIcon('success')
-     
-      setTimeout(() => {
-        navigate("/products");
-        createOrder(cart);
-        clearCart();
-        // podria tambien ser home
-          
-      }, 3000);
-      
+    openNotificationWithIcon("success", "topRight");
 
+    setTimeout(() => {
+      navigate("/products");
+      createOrder(cart);
+      clearCart();
+      // podria tambien ser home
+    }, 3000);
   };
 
   const cartItem = cart.map((cartItem, i) => {
-    //   pendiente funcion suma
-    // const total = summary(cartItem);
-    // console.log(cartItem)
-    // console.log(cartItem.Categories[0].name);
-
     return (
       <div className="cartProduct" key={i}>
         <div className="cartImage">
@@ -96,16 +87,29 @@ const Cart = () => {
   return (
     <div className="cartCheckout">
       <div className="cartList">
-        <h2 className="textStyle">Shopping Bag ({cart.length})</h2>
+        <h3 className="textStyle">Shopping Bag ({cart.length})</h3>
         {cartItem}
-
       </div>
       <div className="cartTotal">
-        <h2 className="textStyle">Summary</h2>
+        <h3 className="textStyle">Summary</h3>
+        <div className="cartDetails">
+          <div className="subtotal">Subtotal</div>{" "}
+          <div className="subtotal">€€€</div>
+        </div>
+        <div className="cartDetails">
+          <div className="delivery">Delivery</div>{" "}
+          <div className="delivery">Free</div>
+        </div>
 
-        <button className="checkout buttonStyle" onClick={() => createNewOrder()}>
+        <button
+          className="checkout buttonStyle"
+          onClick={() => createNewOrder()}
+        >
           Checkout
         </button>
+        <div className="taxes">Taxes included</div>
+       
+    
       </div>
     </div>
   );
