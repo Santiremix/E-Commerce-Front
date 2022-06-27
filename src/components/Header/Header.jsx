@@ -46,10 +46,6 @@ const Header = () => {
               <li>
               <Link to="/profile"><UserOutlined /></Link>
             </li>
-               <li><span onClick={logout}>
-                <Link to="/">Logout</Link>
-              </span>
-              </li>
               </>
             ) : (
               <>
