@@ -51,6 +51,7 @@ const Cart = () => {
     if (!user) {
       navigate("/access");
     }
+    else if(user){
     openNotificationWithIcon("success", "topRight");
 
     setTimeout(() => {
@@ -59,6 +60,7 @@ const Cart = () => {
       clearCart();
       // podria tambien ser home
     }, 3000);
+}
   };
 
   const cartItem = cart.map((cartItem, i) => {
