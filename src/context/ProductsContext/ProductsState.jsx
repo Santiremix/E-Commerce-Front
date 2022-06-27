@@ -33,6 +33,33 @@ export const ProductsProvider = ({ children }) => {
       return res;
     };
 
+    const getProductByCategory = async (param) => {
+      const res = await axios.get(API_URL + `/categories/getCategoryById/${param}`);
+      dispatch({
+        type: "GET_PRODUCT_BY_CATEGORY",
+        payload: res.data,
+      });
+      return res;
+    };
+
+    const orderProductDes = async () => {
+      const res = await axios.get(API_URL + '/products/getProductsOrdered');
+      dispatch({
+        type: "ORDER_PRODUCTS_DES",
+        payload: res.data,
+      });
+      return res;
+    };
+
+    const orderProductAsc = async () => {
+      const res = await axios.get(API_URL + '/products/getProductsOrderedASC');
+      dispatch({
+        type: "ORDER_PRODUCTS_ASC",
+        payload: res.data,
+      });
+      return res;
+    };
+
     const addCart = (product) => {
       dispatch({
         type: "ADD_CART",
@@ -62,7 +89,10 @@ export const ProductsProvider = ({ children }) => {
         addCart,
         clearCart,
         removeCart,
-        getProductByName
+        getProductByName,
+        getProductByCategory,
+        orderProductAsc,
+        orderProductDes
         }}
       >
         {children}

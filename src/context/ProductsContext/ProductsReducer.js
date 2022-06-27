@@ -11,6 +11,24 @@ const products = (state, action) => {
         ...state,
         products: action.payload,
       };
+
+      case "GET_PRODUCT_BY_CATEGORY":
+      return {
+        ...state,
+        products: action.payload,
+      };
+
+      case "ORDER_PRODUCTS_DES":
+      return {
+        ...state,
+        products: action.payload,
+      };
+
+      case "ORDER_PRODUCTS_ASC":
+      return {
+        ...state,
+        products: action.payload,
+      };
       
     case "ADD_CART":
       return {
