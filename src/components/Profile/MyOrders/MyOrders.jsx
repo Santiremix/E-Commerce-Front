@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../../context/UserContext/UserState";
 import { Spin } from "antd";
+import { Divider } from "antd";
 import "./MyOrders.scss";
 
 const MyOrders = () => {
@@ -37,7 +38,9 @@ const MyOrders = () => {
 
     return (
       <div className="order" key={i}>
+         
         <div className="orderTitle">Order #{order.id}</div>
+        <Divider/>
         <div className="dates">
           <div className="orderDate">
             <span className="date">Order Date: </span>
@@ -49,17 +52,22 @@ const MyOrders = () => {
             <br /> {deliveryDate}
           </div>
         </div>
+        <Divider/>
         {order.Products.map((article, i) => (
           <div className="article" key={i}>
             <div>
               <img src={article.image} className="articleImg" />
             </div>
             <div className="articleDescription">
-              <div className="articleTitle">{article.name}</div>
+            <div className="articleInfo">
+            <span className="name">{article.name}</span>
+            <span className="category">{article.Categories}</span>
+            </div>
               <div className="articlePrice">{article.price}€</div>
             </div>
           </div>
         ))}
+        
       </div>
     );
   });
@@ -67,7 +75,7 @@ const MyOrders = () => {
   return (
     <>
       <div className="ordersInfo">
-        <h3>Order History</h3>
+      <h3 className="textStyle">Order History</h3>
         <p>You can find all your orders here.</p>
         {order}
       </div>

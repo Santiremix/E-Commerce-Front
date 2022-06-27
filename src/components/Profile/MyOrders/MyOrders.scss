@@ -2,11 +2,12 @@
   .ordersInfo {
     padding:2em;
     margin: 0 auto;
-    border: 2px solid green;
+    
     text-align: center;
     width: 50vw;
     .order {
-        border: solid 2px purple;
+       
+        padding:2em;
        .orderTitle{
            font-weight: 700;
        }
@@ -14,7 +15,7 @@
         .dates {
           display: flex;
           justify-content: space-around;
-          border: solid 2px pink;
+          
           max-width:30vw;
           margin:0 auto;
           // campo original
@@ -33,15 +34,13 @@
       }
       // producto
       .article {
-        border: 2px dotted black;
+
         display: flex;
         padding: 1em;
         margin: 1em;
         align-items: center;
         justify-content: center;
-        background-color: beige;
-      
-      //   div imagen
+    
         .articleImg {
           width: 50%;
           // pendiente de editar
@@ -49,15 +48,20 @@
           height: 160px;
         }
         .articleDescription {
-          width: 50%;
-          text-align: center;
-          .articleTitle {
-            color: red;
-          }
-          .articlePrice{
+            display: flex;
+            flex-direction: column;
+            .name {
+              color: black;
               font-weight: 700;
+            }
+            .category {
+              color: black;
+            }
           }
-        }
+          .cartPrice {
+            font-weight: 700;
+          }
+        
       }
       
       
