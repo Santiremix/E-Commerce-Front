@@ -38,7 +38,7 @@ const Cart = () => {
   const cartItem = cart.map((cartItem, i) => {
     //   pendiente funcion suma
     // const total = summary(cartItem);
-    console.log(cartItem.Categories[0].name);
+    // console.log(cartItem.Categories[0].name);
 
     return (
       <div className="cartProduct" key={i}>
@@ -55,7 +55,7 @@ const Cart = () => {
         <div className="cartDescription">
           <div className="cartInfo">
             <span className="name">{cartItem.name}</span>
-            <span className="category">{cartItem.Categories[0].name}</span>
+            {/* <span className="category">{cartItem.Categories[0].name}</span> */}
           </div>
 
           <div className="cartPrice">{cartItem.price}€</div>
