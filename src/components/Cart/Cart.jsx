@@ -25,6 +25,14 @@ const Cart = () => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
+  const openNotificationWithIcon = (type) => {
+    notification[type]({
+      message: 'Pedido añadido!',
+      description:
+        'Tu pedido ha sido añadido con éxito. Visita tu historial de pedidos para consultar datos sobre el envío y fechas de entrega.',
+    });
+  };
+
   if (cart.length <= 0) {
     return (
       <>
@@ -39,14 +47,13 @@ const Cart = () => {
   }
   const createNewOrder = () => {
     if (!user) {
-        return (
-            navigate("/access")
-        );
-      }
-    createOrder(cart);
-    clearCart();
-    navigate("/products")
-
+      console.log('Logueate')
+    }
+    else if (user){
+      openNotificationWithIcon('success')
+      createOrder(cart);
+      clearCart();
+    }
   };
 
   const cartItem = cart.map((cartItem, i) => {

@@ -7,6 +7,7 @@ const cart = JSON.parse(localStorage.getItem("cart"));
 const initialState = {
   products: [],
   cart: cart ? cart : [],
+  // count:7
 };
 
 const API_URL = "http://localhost:8080";
