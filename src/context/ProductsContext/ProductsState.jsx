@@ -42,6 +42,24 @@ export const ProductsProvider = ({ children }) => {
       return res;
     };
 
+    const orderProductDes = async () => {
+      const res = await axios.get(API_URL + '/products/getProductsOrdered');
+      dispatch({
+        type: "ORDER_PRODUCTS_DES",
+        payload: res.data,
+      });
+      return res;
+    };
+
+    const orderProductAsc = async () => {
+      const res = await axios.get(API_URL + '/products/getProductsOrderedASC');
+      dispatch({
+        type: "ORDER_PRODUCTS_ASC",
+        payload: res.data,
+      });
+      return res;
+    };
+
     const addCart = (product) => {
       dispatch({
         type: "ADD_CART",
@@ -72,7 +90,9 @@ export const ProductsProvider = ({ children }) => {
         clearCart,
         removeCart,
         getProductByName,
-        getProductByCategory
+        getProductByCategory,
+        orderProductAsc,
+        orderProductDes
         }}
       >
         {children}

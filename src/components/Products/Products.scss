@@ -94,3 +94,11 @@
 .dropdown-item{
     cursor: pointer;
 }
+
+.drop-btns{
+    display: flex;
+    // flex-direction: column;
+    .dropdown{
+        margin-right: 18px;
+    }
+}
