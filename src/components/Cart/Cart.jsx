@@ -4,6 +4,7 @@ import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import { useNavigate, Link } from "react-router-dom";
 import "./Cart.scss";
 import { UserContext } from "../../context/UserContext/UserState";
+import { notification } from "antd";
 
 // function summary(order) {
 //     let total = order.price
@@ -31,6 +32,8 @@ const Cart = () => {
       description:
         'Tu pedido ha sido añadido con éxito. Visita tu historial de pedidos para consultar datos sobre el envío y fechas de entrega.',
     });
+
+
   };
 
   if (cart.length <= 0) {
@@ -47,13 +50,19 @@ const Cart = () => {
   }
   const createNewOrder = () => {
     if (!user) {
-      console.log('Logueate')
+        navigate("/access");
     }
-    else if (user){
       openNotificationWithIcon('success')
-      createOrder(cart);
-      clearCart();
-    }
+     
+      setTimeout(() => {
+        navigate("/products");
+        createOrder(cart);
+        clearCart();
+        // podria tambien ser home
+          
+      }, 3000);
+      
+
   };
 
   const cartItem = cart.map((cartItem, i) => {
