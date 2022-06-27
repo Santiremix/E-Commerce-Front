@@ -35,6 +35,12 @@ const users = (state, action) => {
               message: ""
             };
 
+      case "UPDATE_USER":
+            return {
+              ...state,
+              user: action.payload,
+            };
+
 
       default:
         return state;

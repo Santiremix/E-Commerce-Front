@@ -68,6 +68,20 @@ export const UserProvider = ({ children }) => {
     });
   };
 
+  const updateUser = async (param) => {
+    const res = await axios.post(API_URL + `/users/updateUser/`,param, {
+      headers: {
+        authorization: token,
+      },
+    }
+    );
+    dispatch({
+      type: "UPDATE_USER",
+      payload: res.data,
+    });
+    return res;
+  };
+
   return (
     <UserContext.Provider
       value={{
@@ -78,6 +92,7 @@ export const UserProvider = ({ children }) => {
         logout,
         register,
         clearMessage,
+        updateUser
       }}
     >
       {children}

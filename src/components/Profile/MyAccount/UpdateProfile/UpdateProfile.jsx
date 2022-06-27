@@ -3,7 +3,17 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../../../context/UserContext/UserState";
 
 const UpdateProfile = () => {
-  const { getUserInfo, user, update } = useContext(UserContext);
+  const { getUserInfo, user, updateUser } = useContext(UserContext);
+  // const [texto, setTexto] = useState('');
+  
+  // const handleChange = e => {
+  //   setTexto(e.target.value)
+  //   console.log('Texto: ' + e.target.value)
+  // }
+
+  // const edit = (param) => {
+  //   updateUser(param)
+  // }
 
   const initialState = {
     name: "",
@@ -35,6 +45,7 @@ const UpdateProfile = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    updateUser(formData)
   };
 
   return (

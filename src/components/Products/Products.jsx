@@ -4,6 +4,7 @@ import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import "./Products.scss"
 import { notification } from "antd";
 import { ShoppingOutlined } from '@ant-design/icons';
+
 const Products = () => {
   const { getProducts, products, addCart, cart, getProductByName, getProductByCategory, orderProductAsc, orderProductDes } = useContext(ProductsContext);
   const [busqueda, setBusqueda] = useState('');
