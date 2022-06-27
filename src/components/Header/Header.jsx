@@ -2,21 +2,20 @@ import "./Header.scss";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
+import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import { useNavigate } from "react-router-dom";
 import { ShoppingOutlined,UserOutlined } from "@ant-design/icons";
 import logo from "../../assets/images/logo.gif"
+
 const Header = () => {
   const { token, logout } = useContext(UserContext);
-
+  const { getProductByCategory, getProducts } = useContext(ProductsContext);
   const navigate = useNavigate();
 
-  // const logoutUser = () => {
-  //   logout();
-  //   setTimeout(() => {
-  //     navigate("/");
-  //   }, 1000);
-  // };
-  //Hola
+  const menProducts = (param) => {
+    navigate('/products')
+    getProductByCategory(param)
+  }
 
   return (
     <>
@@ -24,13 +23,13 @@ const Header = () => {
       <Link to="/"><div>{<img src={logo} style={{height:70+'px'}}/>}</div></Link>
         <ul>
           <li>
-            <Link to="/products">Products</Link>
+            <Link to="/products" onClick={() => getProducts()}>Products</Link>
           </li>
           <li>
-            <Link to="/men">men</Link>
+            <span onClick={() => menProducts(5)}>Men</span>
           </li>
           <li>
-            <Link to="/women">women</Link>
+          <span onClick={() => menProducts(6)}>Women</span>
           </li>
 
           <li>
