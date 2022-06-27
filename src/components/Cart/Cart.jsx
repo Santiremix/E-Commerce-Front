@@ -1,9 +1,11 @@
 import { useContext, useEffect } from "react";
 import { OrdersContext } from "../../context/OrdersContext/OrderState";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
+import { UserContext } from "../../context/UserContext/UserState";
 import { Link } from "react-router-dom";
 import "./Cart.scss";
-import { DeleteTwoTone } from "@ant-design/icons";
+import { notification } from 'antd';
+
 
 // function summary(order) {
 //     let total = order.price
@@ -15,10 +17,19 @@ import { DeleteTwoTone } from "@ant-design/icons";
 const Cart = () => {
   const { cart, clearCart, removeCart } = useContext(ProductsContext);
   const { createOrder } = useContext(OrdersContext);
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
+
+  const openNotificationWithIcon = (type) => {
+    notification[type]({
+      message: 'Pedido añadido!',
+      description:
+        'Tu pedido ha sido añadido con éxito. Visita tu historial de pedidos para consultar datos sobre el envío y fechas de entrega.',
+    });
+  };
 
   if (cart.length <= 0) {
     return (
@@ -33,8 +44,14 @@ const Cart = () => {
     );
   }
   const createNewOrder = () => {
-    createOrder(cart);
-    clearCart();
+    if (!user) {
+      console.log('Logueate')
+    }
+    else if (user){
+      openNotificationWithIcon('success')
+      createOrder(cart);
+      clearCart();
+    }
   };
 
   const cartItem = cart.map((cartItem, i) => {
