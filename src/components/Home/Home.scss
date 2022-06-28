@@ -47,6 +47,8 @@
       font-size: 32px;
       color: white;
       filter: brightness(100%);
+      cursor: pointer;
+
     }
   }
   .home__men {
@@ -68,11 +70,12 @@
   .home__women:hover,
   .home__men:hover {
     filter: brightness(50%);
-    transition: all 1s ease;
+    transition: all 0.5s ease;
     div {
       color: black;
       border: 2px solid black;
-      transition: all 1s ease;
+      transition: all 0.5s ease;
+
     }
   }
 }

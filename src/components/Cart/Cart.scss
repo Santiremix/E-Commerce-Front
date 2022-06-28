@@ -22,6 +22,7 @@
   background-color: transparent;
   border: none;
   margin-left:-7px;
+  cursor: pointer;
 }
 
 .cartCheckout {
@@ -95,6 +96,7 @@
     color: white;
     font-weight: 700;
     text-transform: uppercase;
+    cursor: pointer;
   }
   .checkout:hover {
     opacity: 0.7;
