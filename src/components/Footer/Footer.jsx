@@ -11,7 +11,7 @@ const Footer = () => {
     }
 
   return (
-        <MDBFooter bgColor='dark' className='text-center text-lg-start text-muted'>
+        <MDBFooter id="footer" bgColor='dark' className='text-center text-lg-start text-muted'>
           <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
             <div className='me-5 d-none d-lg-block'>
               <span>Get connected with us on social networks:</span>
@@ -44,7 +44,8 @@ const Footer = () => {
               <div className='row mt-3'>
                 <div className='col-md-3 col-lg-4 col-xl-3 mx-auto mb-4'>
                   <h6 className='text-uppercase fw-bold mb-4'>
-                    <i className='fas fa-gem me-3'></i>GANGA
+                 GANGA
+                   
                   </h6>
                   <p>
                   We are a brand that constantly seeks to innovate and improve. We hope you enjoy our designs.
