@@ -166,7 +166,7 @@ Crear una función para mostrar solo los productos que coincidan con una única 
 
 ##  ♥️ Agradecimientos
 
-A todos los compis([Mike](https://github.com/MrSetOne),[Xavi](https://github.com/xavi-mat),[Vane](https://github.com/vaneebg/) y profes en general: ([Sofía](https://github.com/SofiaPinilla), [Geer](https://github.com/GeerDev) e [Iván](https://github.com/ivanpuebla10)]).
+A todos los compis([Mike](https://github.com/MrSetOne),[Gabry](https://github.com/Gabo-Tech), [Xavi](https://github.com/xavi-mat) y [Vane](https://github.com/vaneebg/)) y profes en general: ([Sofía](https://github.com/SofiaPinilla), [Geer](https://github.com/GeerDev) e [Iván](https://github.com/ivanpuebla10)]).
 
 
 ## Autor
