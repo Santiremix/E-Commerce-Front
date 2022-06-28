@@ -122,40 +122,42 @@ Utilizar Context
 En esta ecommerce, el usuario puede acceder a diferentes páginas para ver la distinta variedad de productos. Para este sencillo ejercicio hemos creado cuatro vistas: homer, men, women y all.  En la home encontramos diferentes creatividades que sirven como enlace a las distintas secciones de la aplicación. En men podemos ver la variedad de productos de ropa para hombre, para mujer en women respectivamente. Si accedemos a all podemos ver la totalidad de prouductos. 
 
 
-—— Buscador de productos: en todas las secciones podemos hacer uso de un buscador por palabras, que devolverá los resultados que coincidan con la búsqueda introducida. Simplemente rellenamos el campo y hacemos click en search. Para motrar los resultados iniciales hacemos click en Show All. 
+—— Buscador de productos——<br> En todas las secciones podemos hacer uso de un buscador por palabras, que devolverá los resultados que coincidan con la búsqueda introducida. Simplemente rellenamos el campo y hacemos click en search. Para motrar los resultados iniciales hacemos click en Show All. 
 ![foto](https://i.imgur.com/4i86nMj.png)
-—— Filtrar por categorías: en todas las secciones contamos además con un filtro que limite los resultados según la categoría de prendas mostradas. Camisetas/T-shirts, Pantalones/Trousers, Sudaderas/Hoodies y Accesorios/Accesories. 
+—— Filtrar por categorías——<br>en todas las secciones contamos además con un filtro que limite los resultados según la categoría de prendas mostradas. Camisetas/T-shirts, Pantalones/Trousers, Sudaderas/Hoodies y Accesorios/Accesories. 
 ![foto](https://i.imgur.com/feQChyO.png)
-—— Carrito de compra:<br>
+—— Carrito de compra——<br>
  Hemos implementado un carrito que permita introducir productos en él. Si no hay productos en él mostrará el enlace a la vista de productos. Conforme se vayan añadiendo aparecerá una notificación temporal en pantalla para informar al usuario de esta acción. Dentro del carrito se mostrarán los productos añadidos y podrá realizar el pedido. En el caso de no estar logueado, redigirá a la pantalla de login, donde podrá ingresar y retomar el pedido. 
 ![foto](https://i.imgur.com/2etidth.png)
 ![foto](https://i.imgur.com/HKPywMP.png)
-—— Login: <br>
+—— Login——<br>
 La pantalla de login resulta sencilla y permite acceder al usuario introduciendo sus campos. De no ser un usuario registrado puede acceder a la pantalla de registro desde el login directamente. Mostramos notificación para informar al usuario de su proceso exitoso.
 ![foto](https://i.imgur.com/Q7wSncF.png)
-—— Registro: <br>
+—— Registro——<br>
 Similar a la pantalla de login nos permite crear nuevos usuarios e ingresarlos en la base de datos para posteriormente hacer login. Mostramos notificación para informar al usuario de su proceso exitoso. Al registrarnos se nos redirigirá a la pantalla de productos para ver las novedades. 
 ![foto](https://i.imgur.com/VVlzRV7.png)
-—— Perfil de usuario: <br>
+—— Perfil de usuario——<br>
 En el perfil de usuario podemos acceder a la información persona, al historial de pedidos y el logout. La información personal podemos modificarla en caso de querer actualizar alguno de los campos.  El historial de pedidos se muestra con más recientes primero, indicando los productos que hay en cada uno de ellos. 
 ![foto](https://i.imgur.com/NjspMGw.png)
 ![foto](https://i.imgur.com/b8HQOFH.png)
 ## 🔜 Retos presentados
 
-* Adaptar backend <br>
+—— Adaptar backend ——<br>
 Tomando como partida un backend anterior hecho con Sequelize realizamos cambios en las tablas y los controladores. Creamos desde cero los modelos para almacenar productos y categorias. Y rellenamos con nuevos Seed para ampliar el catálogo de la tienda.  Además, varios endpoint del backend necesitaron ser adaptados e incorporados, ya que la estructura base no encajaba del todo. 
-* Incorporar imágenes 
+
+—— Incorporar imágenes ——<br>
 Añadimos imágenes para todos los productos directamente en la base de datos, de esta forma se pueden mostrar en el frontend directamente. 
 
-* 
+
 
 
 ## 🔜 Futuras Implementaciones
 
 * Diseño responsive. 
-* Crear una variable para permitir distintas llamadas a la API y variar el contenido de la revista. 
-* Borrar imágenes antiguas una vez son actualizadas. 
-* Permitir subir varias imágenes a cada post.
+* Corregir bugs 
+* Añadir imágenes de forma local
+* Permitir a los usuarios <i>guardar productos en favoritos.</i>
+* Añadir <i>Valoraciones</i> a los productos.
 
 
 ##  ♥️ Agradecimientos
@@ -163,8 +165,6 @@ Añadimos imágenes para todos los productos directamente en la base de datos, d
 A todos los compis([Mike](https://github.com/MrSetOne),[Xavi](https://github.com/xavi-mat),[Vane](https://github.com/vaneebg/) y profes en general: ([Sofía](https://github.com/SofiaPinilla), [Geer](https://github.com/GeerDev) e [Iván](https://github.com/ivanpuebla10)]).
 
 
-
-[Ant-Design] (https://ant.design/)
 ## Autor
 
 ### 🐱[Fran](https://github.com/franpd8)🐱
