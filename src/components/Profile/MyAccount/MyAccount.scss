@@ -10,6 +10,7 @@
       width: 240px;
       p {
         margin: 0;
+        cursor: pointer;
       }
     }
   }
@@ -46,4 +47,8 @@
       font-weight: 700;
     }
   }
+}
+
+.updateBtn{
+  cursor: pointer
 }
