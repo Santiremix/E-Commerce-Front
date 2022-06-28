@@ -33,6 +33,7 @@ const Cart = () => {
         "Your order has been placed! Check your order history for more details such us delivery date.",
       placement,
     });
+    
   };
 
   if (cart.length <= 0) {

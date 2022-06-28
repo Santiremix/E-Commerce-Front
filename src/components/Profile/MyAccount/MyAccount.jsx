@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { UserContext } from "../../../context/UserContext/UserState";
-import { Divider } from "antd";
+import { Divider, notification } from "antd";
 import {
   SmileOutlined,
   HomeOutlined,
@@ -17,14 +17,24 @@ const MyProfile = () => {
   const [personalInfo, setPersonalInfo] = useState(initialValue);
   const { getUserInfo, user, logout } = useContext(UserContext);
 
+  const openNotificationWithIcon = (type, placement) => {
+    notification[type]({
+      message: "Bye bye!",
+      description:
+        "Your logout went smoothly.",
+      placement,
+    });
+  };
+
   useEffect(() => {
     getUserInfo();
   }, []);
   const logoutUser = () => {
     logout();
+    openNotificationWithIcon("success", "topRight");
     setTimeout(() => {
       navigate("/");
-    }, 1000);
+    }, 2000);
   };
 
   return (
