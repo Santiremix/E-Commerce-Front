@@ -27,7 +27,7 @@ const Header = () => {
             <span onClick={() => menProducts(5)}>men</span>
           </li>
           <li>
-          <span onClick={() => menProducts(6)}>women</span>
+            <span onClick={() => menProducts(6)}>women</span>
           </li>
           <li>
             <Link to="/products" onClick={() => getProducts()}>all</Link>
