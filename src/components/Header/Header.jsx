@@ -33,7 +33,7 @@ const Header = () => {
             <Link to="/products" onClick={() => getProducts()}>all</Link>
           </li>
           <li>
-            <span>
+            <span className="cart-icon">
               <Link to="/cart">
                 <ShoppingOutlined />
               </Link>
