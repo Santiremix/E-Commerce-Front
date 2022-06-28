@@ -7,29 +7,21 @@
   div {
     width: 50%;
   }
-
-  .home__banner {
-    width: 100%;
-    height: 160px;
-    background-image: url(https://i.imgur.com/tQ3SGzg.gif);
-    background-size: cover;
-  }
-  .home__gif,
-  .home__promo {
+  .home__banner, .home__newsletter {
     display: flex;
     justify-content: center;
-    width: 50%;
-    height: auto;
-    margin: 4em auto;
+    width:100%;
+    img{
+      width:100%;
+    }
   }
-
-  .home__newsletter {
-    background-image: url(https://i.imgur.com/BTKehxa.png);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 260px;
-    margin: 4em auto;
+  .home__duo{
+    display:flex;
+    width:100%;
+    margin: 4em auto; 
+    div img {
+      width:100%;
+    }
   }
   .home__men,
   .home__women {
@@ -37,6 +29,7 @@
     background-size: cover;
     background-position: center;
     filter: brightness(100%);
+    margin: 4em auto 1em;
     div {
       border: 2px solid white;
       position: relative;
@@ -48,7 +41,6 @@
       color: white;
       filter: brightness(100%);
       cursor: pointer;
-
     }
   }
   .home__men {
@@ -57,24 +49,15 @@
   .home__women {
     background-image: url(https://i.imgur.com/Bz4vmRT.jpg);
   }
-  .home__gif div {
-    width: 600px;
-    height: 600px;
-    background-image: url(https://i.imgur.com/Z2yi3GX.gif);
-  }
-  .home__promo div {
-    width: 600px;
-    height: 600px;
-    background-image: url(https://i.imgur.com/QnRmsXB.png);
-  }
+  
   .home__women:hover,
   .home__men:hover {
     filter: brightness(50%);
-    transition: all 1s ease;
+    transition: all 0.5s ease;
     div {
       color: black;
       border: 2px solid black;
-      transition: all 1s ease;
+      transition: all 0.5s ease;
     }
   }
 }

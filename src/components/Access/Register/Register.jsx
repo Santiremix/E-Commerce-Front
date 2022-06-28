@@ -1,12 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../../context/UserContext/UserState";
-import { Form, Input, Button } from 'antd';
 import { useNavigate } from "react-router-dom";
-
-
+import { notification } from "antd";
 function Register() {
-
-    const { clearMessage, register, message } = useContext(UserContext);
+  const initialValue = true;
+  const [setAccount] = useState(initialValue);
+    const {register} = useContext(UserContext);
 
     const navigate = useNavigate()
     const initialState = {
@@ -19,6 +18,15 @@ function Register() {
     };
     const [formData, setFormData] = useState(initialState);
     const { name,email, password,password2,phone} = formData;
+
+    const openNotificationWithIcon = (type, placement) => {
+      notification[type]({
+        message: "Welcome",
+        description:
+          "Your account has been created.",
+        placement,
+      });
+    };
   
     const onChange = (e) => {
       setFormData((prevState) => ({
@@ -28,10 +36,12 @@ function Register() {
     };
     const onSubmit = (e) => {
       e.preventDefault();
+      console.log(formData)
       register(formData);
+      openNotificationWithIcon("success", "topRight");
       setTimeout(() => {
-        navigate("/")
-        clearMessage()
+        navigate("/products")
+        
     },3000)
     };
 
