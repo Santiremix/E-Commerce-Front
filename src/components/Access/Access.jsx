@@ -12,14 +12,14 @@ function Access() {
 
   return (
     <div className="example">
-      <div className="textStyle"> {account ? "Login" : "Register"}</div>
+      <div className="textStyle" style={{fontSize:24+"px"}}> {account ? "Login" : "Register"}</div>
       {account ? <Login /> : <Register />}
-      <div
+      <span
         className="accessText"
         onClick={() => setAccount((initial) => !initial)}
       >
         {account ? "Create Account" : "Login"}
-      </div>
+      </span>
     </div>
   );
 }

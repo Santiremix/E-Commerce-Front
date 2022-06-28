@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../../context/UserContext/UserState";
 import { Form, Input, Button } from "antd";
 import { useNavigate } from "react-router-dom";
+import { notification } from "antd";
 
 function Login() {
   const { login } = useContext(UserContext);
@@ -12,7 +13,14 @@ function Login() {
   };
   const [formData, setFormData] = useState(initialState);
   const { email, password } = formData;
-
+  const openNotificationWithIcon = (type, placement) => {
+    notification[type]({
+      message: "Welcome back!",
+      description:
+        "Your login went smoothly.",
+      placement,
+    });
+  };
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -22,6 +30,7 @@ function Login() {
   const onSubmit = (e) => {
     e.preventDefault();
     login(formData);
+    openNotificationWithIcon("success", "topRight");
   };
 
   useEffect(() => {
