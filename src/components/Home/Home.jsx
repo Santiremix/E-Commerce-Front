@@ -21,8 +21,6 @@ const { getProductByCategory, getProducts } = useContext(ProductsContext);
         <div className="home__newsletter"> </div>
         <div className="home__men" onClick={() => linkToSection(5)}> <div className="textStyle">men</div> </div>
         <div className="home__women" onClick={() => linkToSection(6)}> <div className="textStyle">women</div> </div>
-
-       
       </div>
     </>
   );

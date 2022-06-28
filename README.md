@@ -129,11 +129,13 @@ En esta ecommerce, el usuario puede acceder a diferentes páginas para ver la di
  Hemos implementado un carrito que permita introducir productos en él. Si no hay productos en él mostrará el enlace a la vista de productos. Conforme se vayan añadiendo aparecerá una notificación temporal en pantalla para informar al usuario de esta acción. Dentro del carrito se mostrarán los productos añadidos y podrá realizar el pedido. En el caso de no estar logueado, redigirá a la pantalla de login, donde podrá ingresar y retomar el pedido. 
 
 —— Login: <br>
-La pantalla de login resulta sencilla y permite acceder al usuario introduciendo sus campos. De no ser un usuario registrado puede acceder a la pantalla de registro desde el login directamente. 
+La pantalla de login resulta sencilla y permite acceder al usuario introduciendo sus campos. De no ser un usuario registrado puede acceder a la pantalla de registro desde el login directamente. Mostramos notificación para informar al usuario de su proceso exitoso.
 
 —— Registro: <br>
-Similar a la pantalla de login nos permite crear nuevos usuarios e ingresarlos en la base de datos para posteriormente hacer login. 
+Similar a la pantalla de login nos permite crear nuevos usuarios e ingresarlos en la base de datos para posteriormente hacer login. Mostramos notificación para informar al usuario de su proceso exitoso. Al registrarnos se nos redirigirá a la pantalla de productos para ver las novedades. 
 
+—— Perfil de usuario: <br>
+En el perfil de usuario podemos acceder a la información personal y al historial de pedidos. La información personal podemos modificarla en caso de querer actualizar alguno de los campos. 
 
 ### ⚔️ React Router
 
