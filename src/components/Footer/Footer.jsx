@@ -1,21 +1,10 @@
 import './Footer.scss'
 import React from 'react';
-import { Link,useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { MDBFooter } from 'mdb-react-ui-kit';
-import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 
 
 const Footer = () => {
-
-    const { getProductByCategory, getProducts } = useContext(ProductsContext);
-    const navigate = useNavigate();
-
-    const viaje = (par) => {
-        navigate('/products')
-        console.log(getProductByCategory(par))
-    }
-
 
   return (
         <MDBFooter bgColor='dark' className='text-center text-lg-start text-muted'>
