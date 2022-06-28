@@ -1,4 +1,4 @@
-import e from "cors";
+// import e from "cors";
 import { useContext, useEffect, useState } from "react";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import "./Products.scss"
