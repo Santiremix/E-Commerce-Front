@@ -93,7 +93,7 @@ useEffect(() => {
 
         <div className="drop-btns">
           <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button  class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Clothing
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -105,7 +105,7 @@ useEffect(() => {
           </div>
 
           <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button  class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Sort by Price
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

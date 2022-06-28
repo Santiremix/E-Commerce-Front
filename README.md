@@ -1,5 +1,5 @@
 #  React Ecommerce
-
+![foto](https://i.imgur.com/qpWG5wc.gif)
 ## Índice
 
 * Sobre el proyecto
@@ -150,7 +150,7 @@ Añadimos imágenes para todos los productos directamente en la base de datos, d
 
 
 —— Filtrar Productos ——<br>
-Crear una función para mostrar solo los productos que coincidan con una única categoría,
+Crear una función para mostrar solo los productos que coincidan con una única categoría, pudiendo ser esta los tipos de prenda. Además de ordenar los productos según su precio de mayor a menor o viceversa. 
 
 
 ## 🔜 Futuras Implementaciones
@@ -161,6 +161,7 @@ Crear una función para mostrar solo los productos que coincidan con una única 
 * Permitir a los usuarios <i>guardar productos en favoritos.</i>
 * Añadir <i>Valoraciones</i> a los productos.
 * Añadir <i> Vista de Administrador</i> y CRUD de productos. 
+* Añadir Breadcrums a la pagina de productos. 
 
 
 ##  ♥️ Agradecimientos
