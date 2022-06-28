@@ -68,10 +68,13 @@ export const ProductsProvider = ({ children }) => {
       });
     };
 
-    const removeCart = (product) => {
+    const removeCart = (id) => {
+      const item = state.cart.map(object => object.id).indexOf(id);
+      console.log(id.id)
+      const newCart = state.cart.splice(item, 1);
       dispatch({
         type: "REMOVE_CART",
-        payload: product,
+        payload: newCart,
       });
     };
 
