@@ -1,8 +1,22 @@
 import './Footer.scss'
 import React from 'react';
+import { Link,useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import { MDBFooter } from 'mdb-react-ui-kit';
+import { ProductsContext } from "../../context/ProductsContext/ProductsState";
+
 
 const Footer = () => {
+
+    const { getProductByCategory, getProducts } = useContext(ProductsContext);
+    const navigate = useNavigate();
+
+    const viaje = (par) => {
+        navigate('/products')
+        console.log(getProductByCategory(par))
+    }
+
+
   return (
         <MDBFooter bgColor='dark' className='text-center text-lg-start text-muted'>
           <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
@@ -37,35 +51,42 @@ const Footer = () => {
               <div className='row mt-3'>
                 <div className='col-md-3 col-lg-4 col-xl-3 mx-auto mb-4'>
                   <h6 className='text-uppercase fw-bold mb-4'>
-                    <i className='fas fa-gem me-3'></i>Company name
+                    <i className='fas fa-gem me-3'></i>GANGA
                   </h6>
                   <p>
-                    Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit.
+                  We are a brand that constantly seeks to innovate and improve. We hope you enjoy our designs.
                   </p>
                 </div>
     
                 <div className='col-md-2 col-lg-2 col-xl-2 mx-auto mb-4'>
                   <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
                   <p>
+                    <Link to='/products/t-shirts'>
                     <a href='#!' className='text-reset'>
-                      Angular
+                      T-shirts
                     </a>
+                    </Link>
                   </p>
                   <p>
+                  <Link to='/products/trousers'>
                     <a href='#!' className='text-reset'>
-                      React
+                      Trousers
                     </a>
+                    </Link>
                   </p>
                   <p>
+                  <Link to='/products/hoodies'>
                     <a href='#!' className='text-reset'>
-                      Vue
+                      Hoodies
                     </a>
+                    </Link>
                   </p>
                   <p>
+                  <Link to='/products/accesories'>
                     <a href='#!' className='text-reset'>
-                      Laravel
+                      Accesories
                     </a>
+                    </Link>
                   </p>
                 </div>
     
@@ -96,11 +117,11 @@ const Footer = () => {
                 <div className='col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4'>
                   <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
                   <p>
-                    <i className='fas fa-home me-3'></i> New York, NY 10012, US
+                    <i className='fas fa-home me-3'></i> New York, US
                   </p>
-                  <p>
+                  <p className='email'>
                     <i className='fas fa-envelope me-3'></i>
-                    info@example.com
+                    ganga@contact.com
                   </p>
                   <p>
                     <i className='fas fa-phone me-3'></i> + 01 234 567 88

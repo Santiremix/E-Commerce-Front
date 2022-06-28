@@ -5,7 +5,7 @@ import "./Products.scss"
 import { notification } from "antd";
 import { ShoppingOutlined } from '@ant-design/icons';
 
-const Products = () => {
+const Products = ({filtroprop}) => {
   const { getProducts, products, addCart, cart, getProductByName, getProductByCategory, orderProductAsc, orderProductDes } = useContext(ProductsContext);
   const [busqueda, setBusqueda] = useState('');
  const addCartAndShowMessage = (product) => {
@@ -27,7 +27,11 @@ const Products = () => {
     document.getElementsByClassName("buscador")[0].value = "";
   }
 
-  const filtro = (num) => {
+  const filtro = (num, par) => {
+    if (num == ""|| num == {}||num==undefined){
+      getProducts()
+      getProductByCategory(par)
+    }
     getProductByCategory(num)
   }
 
@@ -49,10 +53,17 @@ const Products = () => {
 
 useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
+    getProductByCategory(filtroprop)
    }
   
   , [cart]);
 
+  // useEffect(() => {
+  //   console.log("parametro",filtroprop);
+   
+  //  }
+  
+  // , [getProductByCategory]);
   const openNotification = (type,placement) => {
     notification[type]({
       message: 'Item added to your shopping bag',

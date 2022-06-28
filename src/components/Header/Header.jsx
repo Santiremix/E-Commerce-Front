@@ -12,7 +12,7 @@ const Header = () => {
   const { getProductByCategory, getProducts } = useContext(ProductsContext);
   const navigate = useNavigate();
 
-  const menProducts = (param) => {
+  const menWomenProducts = (param) => {
     navigate('/products')
     getProductByCategory(param)
   }
@@ -24,13 +24,13 @@ const Header = () => {
         <ul>
           
           <li>
-            <span onClick={() => menProducts(5)}>men</span>
+            <span onClick={() => menWomenProducts(5)}>men</span>
           </li>
           <li>
-          <span onClick={() => menProducts(6)}>women</span>
+            <span onClick={() => menWomenProducts(6)}>women</span>
           </li>
           <li>
-            <Link to="/products" onClick={() => getProducts()}>all</Link>
+            <span onClick={() => getProducts()}>all</span>
           </li>
           <li>
             <span>

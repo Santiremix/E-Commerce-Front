@@ -71,7 +71,7 @@ const Cart = () => {
             <img src={cartItem.image} className="cartImg" />
           </div>
           <div>
-            <button className="cartRemove" onClick={() => removeCart(cartItem)}>
+            <button className="cartRemove" onClick={() => removeCart(cartItem.id)}>
               Delete item{" "}
             </button>
           </div>
