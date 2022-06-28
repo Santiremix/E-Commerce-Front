@@ -18,22 +18,22 @@ const Footer = () => {
             </div>
     
             <div className='icons'>
-              <a href='' className='me-4 text-reset'>
+              <a href='#!' className='me-4 text-reset'>
                 <i className='fab fa-facebook-f'></i>
               </a>
-              <a href='' className='me-4 text-reset'>
+              <a href='#!' className='me-4 text-reset'>
                 <i className='fab fa-twitter'></i>
               </a>
-              <a href='' className='me-4 text-reset'>
+              <a href='#!' className='me-4 text-reset'>
                 <i className='fab fa-google'></i>
               </a>
-              <a href='' className='me-4 text-reset'>
+              <a href='#!' className='me-4 text-reset'>
                 <i className='fab fa-instagram'></i>
               </a>
-              <a href='' className='me-4 text-reset'>
+              <a href='#!' className='me-4 text-reset'>
                 <i className='fab fa-linkedin'></i>
               </a>
-              <a href='' className='me-4 text-reset'>
+              <a href='#!' className='me-4 text-reset'>
                 <i className='fab fa-github'></i>
               </a>
             </div>
@@ -54,28 +54,28 @@ const Footer = () => {
                 <div className='col-md-2 col-lg-2 col-xl-2 mx-auto mb-4'>
                   <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
                   <p>
-                    <Link to='/products/t-shirts'>
-                    <a href='#!' className='text-reset'>
+                    <Link to='/products'>
+                    <a href='#' className='text-reset'>
                       T-shirts
                     </a>
                     </Link>
                   </p>
                   <p>
-                  <Link  to='/products/trousers'>
+                  <Link  to='/products'>
                     <a href='#!' className='text-reset'>
                       Trousers
                     </a>
                     </Link>
                   </p>
                   <p>
-                  <Link to='/products/hoodies'>
+                  <Link to='/products'>
                     <a href='#!' className='text-reset'>
                       Hoodies
                     </a>
                     </Link>
                   </p>
                   <p>
-                  <Link to='/products/accesories'>
+                  <Link to='/products'>
                     <a href='#!' className='text-reset'>
                       Accesories
                     </a>
