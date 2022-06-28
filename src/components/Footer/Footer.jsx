@@ -6,6 +6,10 @@ import { MDBFooter } from 'mdb-react-ui-kit';
 
 const Footer = () => {
 
+    const refresh = () => {
+        window.location.reload()
+    }
+
   return (
         <MDBFooter bgColor='dark' className='text-center text-lg-start text-muted'>
           <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
@@ -57,7 +61,7 @@ const Footer = () => {
                     </Link>
                   </p>
                   <p>
-                  <Link to='/products/trousers'>
+                  <Link  to='/products/trousers'>
                     <a href='#!' className='text-reset'>
                       Trousers
                     </a>

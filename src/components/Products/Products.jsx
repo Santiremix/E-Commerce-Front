@@ -1,9 +1,11 @@
 // import e from "cors";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useParams } from "react";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import "./Products.scss"
 import { notification } from "antd";
 import { ShoppingOutlined } from '@ant-design/icons';
+import {matchPath} from 'react-router'
+
 
 const Products = ({filtroprop}) => {
   const { getProducts, products, addCart, cart, getProductByName, getProductByCategory, orderProductAsc, orderProductDes } = useContext(ProductsContext);
@@ -28,12 +30,23 @@ const Products = ({filtroprop}) => {
   }
 
   const filtro = (num, par) => {
-    if (num == ""|| num == {}||num==undefined){
-      getProducts()
+    if (num == ""|| num == {}||num == undefined){
       getProductByCategory(par)
     }
     getProductByCategory(num)
   }
+
+  function UrlControl() {
+    let {url} = useParams();
+    console.log(url)
+    
+    if (url == '/products/hoodies'){
+      getProductByCategory(3)
+    }
+  }
+
+
+    
 
   const orderAsc = () => {
     orderProductAsc()
@@ -51,12 +64,19 @@ const Products = ({filtroprop}) => {
     });
   }, []);
 
+const url = () => {
+  const tshirts = matchPath('/products/t-shirts', {path: '/products/t-shirts', exact: true, strict:true});
+  return(tshirts.isExact == true ? filtro(1) : {})
+}
+
 useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
-    getProductByCategory(filtroprop)
+    // getProductByCategory(filtroprop)
+    // url()
    }
   
   , [cart]);
+
 
   // useEffect(() => {
   //   console.log("parametro",filtroprop);
@@ -95,7 +115,7 @@ useEffect(() => {
   });
 
   return(
-  <div className="cont">
+    <div className="cont">
     <div className="search-div">
         <input className="buscador" type='search' placeholder='Buscar' onChange={handleChange}>
         </input>

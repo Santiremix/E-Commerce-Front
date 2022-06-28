@@ -1,5 +1,5 @@
 import "./Header.scss";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
@@ -30,7 +30,7 @@ const Header = () => {
             <span onClick={() => menWomenProducts(6)}>women</span>
           </li>
           <li>
-            <span onClick={() => getProducts()}>all</span>
+            <span onClick={() => navigate('/products')}>all</span>
           </li>
           <li>
             <span>

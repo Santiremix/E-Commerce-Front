@@ -31,10 +31,12 @@ function App() {
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/register" element={<Register />} />
                   <Route path="/products" element={<Products/>} />
-                  <Route path="/products/t-shirts" element={<Products filtroprop="1"/>} />
-                  <Route path="/products/trousers" element={<Products filtroprop="2"/>} />
-                  <Route path="/products/hoodies" element={<Products filtroprop="3"/>} />
-                  <Route path="/products/accesories" element={<Products filtroprop="4"/>} />
+                  <Route exact path="/products/t-shirts" element={<Products filtroprop="1"/>} />
+                  <Route exact path="/products/trousers" element={<Products filtroprop="2"/>} />
+                  <Route exact  path="/products/hoodies" element={<Products filtroprop="3"/>} />
+                  <Route exact path="/products/accesories" element={<Products filtroprop="4"/>} />
+                  <Route exact path="/products/men" element={<Products filtroprop="5"/>} />
+                  <Route exact path="/products/women" element={<Products filtroprop="6"/>} />
                   <Route path="/cart" element={<Cart />} />
                   <Route path="/access" element={<Access />} />
                   <Route path="/myorders" element={<MyOrders />} />
