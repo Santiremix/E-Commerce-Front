@@ -2,10 +2,12 @@ import "./Home.scss";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
-import newsletter  from "../../assets/images/newsletter.png"
+import promo from "../../assets/images/promo.png"
+import newsletter from "../../assets/images/newsletter.png"
+import gif from "../../assets/images/gif.gif"
+import banner from "../../assets/images/banner.gif"
 
 const Home = () => {
-
 const navigate = useNavigate();
 const { getProductByCategory, getProducts } = useContext(ProductsContext);
   const linkToSection = (param) => {
@@ -15,8 +17,8 @@ const { getProductByCategory, getProducts } = useContext(ProductsContext);
   return (
     <>
       <div className="home">
-        <div className="home__banner"> </div>
-        <div className="home__gif"> <div onClick={() => linkToSection()}></div></div>{" "}
+        <div className="home__banner"><img src={banner}/></div>
+        <div className="home__gif"> <div onClick={() => linkToSection()}> <img src={gif}/></div></div>{" "}
         <div className="home__promo"> <div onClick={() => linkToSection()}></div> </div>
         <div className="home__newsletter"> </div>
         <div className="home__men" onClick={() => linkToSection(5)}> <div className="textStyle">men</div> </div>
