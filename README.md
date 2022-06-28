@@ -149,6 +149,8 @@ Tomando como partida un backend anterior hecho con Sequelize realizamos cambios 
 Añadimos imágenes para todos los productos directamente en la base de datos, de esta forma se pueden mostrar en el frontend directamente. 
 
 
+—— Filtrar Productos ——<br>
+Crear una función para mostrar solo los productos que coincidan con una única categoría,
 
 
 ## 🔜 Futuras Implementaciones
@@ -158,6 +160,7 @@ Añadimos imágenes para todos los productos directamente en la base de datos, d
 * Añadir imágenes de forma local
 * Permitir a los usuarios <i>guardar productos en favoritos.</i>
 * Añadir <i>Valoraciones</i> a los productos.
+* Añadir <i> Vista de Administrador</i> y CRUD de productos. 
 
 
 ##  ♥️ Agradecimientos
@@ -167,5 +170,5 @@ A todos los compis([Mike](https://github.com/MrSetOne),[Xavi](https://github.com
 
 ## Autor
 
-### 🐱[Fran](https://github.com/franpd8)🐱
-### 🐱[Santi](https://github.com/Santiremix)🐱
+### 🐈‍⬛[Fran](https://github.com/franpd8)🐈‍⬛
+### 🌙[Santi](https://github.com/Santiremix)🌙
