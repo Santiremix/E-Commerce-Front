@@ -31,9 +31,15 @@
             margin: 0 1.4rem 0 1.4rem;
             text-decoration: none;
             cursor: pointer;
+            display: flex;
+          
             a{
                 color: black;
             }
         }
     }
+}
+
+.anticon, .anticon-shopping{
+    margin-bottom: 18px;
 }
