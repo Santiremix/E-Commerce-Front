@@ -1,19 +1,8 @@
-// import { Form, Input, Button } from "antd";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../../../context/UserContext/UserState";
 
 const UpdateProfile = () => {
   const { getUserInfo, user, updateUser } = useContext(UserContext);
-  // const [texto, setTexto] = useState('');
-  
-  // const handleChange = e => {
-  //   setTexto(e.target.value)
-  //   console.log('Texto: ' + e.target.value)
-  // }
-
-  // const edit = (param) => {
-  //   updateUser(param)
-  // }
 
   const initialState = {
     name: "",
@@ -28,13 +17,6 @@ const UpdateProfile = () => {
     getUserInfo();
   }, []);
 
-  //   const onFinish = (values) => {
-  //     updateUser(values)
-  //   };
-  //   const onFinishFailed = (errorInfo) => {
-  //     console.log("Failed:", errorInfo);
-  //   };
-
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -44,18 +26,18 @@ const UpdateProfile = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    updateUser(formData)
+    updateUser(formData);
   };
 
   return (
-   
-    <> <h3 className="textStyle">Personal information</h3>
-    <p className="userMessage">
-      Hello {user.name}, the email address is used when you sign in to your account.
-    </p>
-
-    <form className="userDetails" onSubmit={onSubmit}>
+    <>
+      {" "}
+      <h3 className="textStyle">Personal information</h3>
+      <p className="userMessage">
+        Hello {user.name}, the email address is used when you sign in to your
+        account.
+      </p>
+      <form className="userDetails" onSubmit={onSubmit}>
         <div className="userLabel">Full Name</div>
         <input
           className="userData"
@@ -92,9 +74,12 @@ const UpdateProfile = () => {
           value={phone}
           onChange={onChange}
         />
-        <input className="updateBtn buttonStyle" type="submit" value ="Save Changes"/>
-      
-    </form>
+        <input
+          className="updateBtn buttonStyle"
+          type="submit"
+          value="Save Changes"
+        />
+      </form>
     </>
   );
 };

@@ -4,7 +4,7 @@ import { UserContext } from "../../../../context/UserContext/UserState";
 
 const UpdateAddress = () => {
   const { getUserInfo, user, update } = useContext(UserContext);
- 
+
   const initialState = {
     name: "",
     email: "",
@@ -17,14 +17,6 @@ const UpdateAddress = () => {
   useEffect(() => {
     getUserInfo();
   }, []);
-
-  //   const onFinish = (values) => {
-  //     updateUser(values)
-  //   };
-  //   const onFinishFailed = (errorInfo) => {
-  //     console.log("Failed:", errorInfo);
-  //   };
-
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -34,16 +26,17 @@ const UpdateAddress = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
   };
 
   return (
-    <> <h3 className="textStyle">Shipping address</h3>
-    <p className="userMessage">
-    Hey there! If you want to update your delivery address, you can do it here.
-    </p>
-
-    <form className="userDetails" onSubmit={onSubmit}>
+    <>
+      {" "}
+      <h3 className="textStyle">Shipping address</h3>
+      <p className="userMessage">
+        Hey there! If you want to update your delivery address, you can do it
+        here.
+      </p>
+      <form className="userDetails" onSubmit={onSubmit}>
         <div className="userLabel">Address line 1</div>
         <input
           className="userData"
@@ -62,9 +55,12 @@ const UpdateAddress = () => {
           value={name}
           onChange={onChange}
         />
-        <input className="updateBtn buttonStyle" type="submit" value ="Save Changes"/>
-      
-    </form>
+        <input
+          className="updateBtn buttonStyle"
+          type="submit"
+          value="Save Changes"
+        />
+      </form>
     </>
   );
 };

@@ -14,7 +14,7 @@ const Products = () => {
  }
   const handleChange = e => {
     setBusqueda(e.target.value)
-    console.log('Busequeda: ' + e.target.value)
+   
   }
 
   const buscar = (name) => {
